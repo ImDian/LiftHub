@@ -4,7 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="83ea767e-4f46-4fcf-aab4-77b2b72487bd" name="Changes" comment="" />
+    <list default="true" id="83ea767e-4f46-4fcf-aab4-77b2b72487bd" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/LiftHub/calculator/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LiftHub/calculator/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LiftHub/calculator/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LiftHub/calculator/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LiftHub/calculator/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LiftHub/calculator/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LiftHub/calculator/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LiftHub/calculator/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LiftHub/calculator/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LiftHub/meals/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/LiftHub/meals/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LiftHub/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/LiftHub/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LiftHub/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/LiftHub/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LiftHub/workouts/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/LiftHub/workouts/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/meals/meals-home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/meals/meals-home.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -16,15 +33,21 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
 }</component>
   <component name="ProjectId" id="2pX3AZtMYKMk7JZaG93HA90c33w" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -38,6 +61,7 @@
     &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;django.template.preview.state&quot;: &quot;SHOW_EDITOR&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -126,6 +150,7 @@
       <workItem from="1733049757015" duration="984000" />
       <workItem from="1733062231257" duration="18996000" />
       <workItem from="1733086154542" duration="265000" />
+      <workItem from="1733086435670" duration="7034000" />
     </task>
     <servers />
   </component>

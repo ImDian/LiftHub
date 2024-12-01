@@ -1,10 +1,11 @@
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
 from django.views.generic import ListView, CreateView, TemplateView
 from LiftHub.workouts.forms import WorkoutCreateForm
 from LiftHub.workouts.models import Workout
 
 
-class CreateWorkoutView(CreateView):
+class CreateWorkoutView(LoginRequiredMixin, CreateView):
     model = Workout
     form_class = WorkoutCreateForm
     template_name = 'workouts/create-workout.html'

@@ -2,6 +2,14 @@
 
 {% block content %}
 
+    <div>
+
+        {% for meal in meals %}
+             <a href=''>{{ meal.name }}</a>
+        {% endfor %}
+
+    </div>
+
     <div class="content">
     <a href={% url 'create-meal' %}>Add a meal</a>
     </div>

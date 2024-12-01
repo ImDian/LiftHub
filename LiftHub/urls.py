@@ -24,5 +24,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('LiftHub.accounts.urls')),
     path('meals/', include('LiftHub.meals.urls')),
-    path('workouts/', include('LiftHub.workouts.urls'))
+    path('workouts/', include('LiftHub.workouts.urls')),
+    path('calculator/', include('LiftHub.calculator.urls'))
 ]
