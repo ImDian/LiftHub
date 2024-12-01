@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .dashboard {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            flex-wrap: wrap; /* Allows items to wrap onto a new line */
+            gap: 10px; /* Adds spacing between items */
+            justify-content: center; /* Centers the items */
+            z-index: 1000;
+        }
+
+        .dashboard a {
+            color: white;
+            text-decoration: none;
+            padding: 5px 10px;
+            font-weight: bold;
+            white-space: nowrap; /* Prevents text from wrapping inside buttons */
+            border-radius: 4px;
+        }
+
+        .dashboard a:hover {
+            background-color: #575757;
+        }
+
+        .content {
+            padding-top: 70px; /* To ensure content isn't hidden under the dashboard */
+        }
+    </style>
+</head>
+<body>
+
+<div class="dashboard">
+    <a href="#">Forum</a>
+    <a href="{% url 'workouts-home' %}">Workouts</a>
+    <a href="{% url 'meals-home' %}">Meals</a>
+    <a href="#">Calculator</a>
+    <a href="{% url 'login' %}">Login</a>
+</div>
+
+    {% block content %}
+    
+    {% endblock %}
+
+</body>
+</html>
+
