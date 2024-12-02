@@ -59,15 +59,16 @@ class Meal(models.Model):
         related_name='meals'
     )
 
+    is_base = models.BooleanField(
+        default=False,
+    )
+
     def calculate_calories(self):
         cals_from_carbs = self.carbs * 4.0
         cals_from_protein = self.protein * 4.0
         cals_from_fat = self.fat * 9.0
         total_calories = cals_from_carbs + cals_from_protein + cals_from_fat
         return total_calories
-
-    def is_base(self):
-        return self.creator is None
 
     def save(self, *args, **kwargs):
         if self.calories is None:

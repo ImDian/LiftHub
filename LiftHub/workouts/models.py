@@ -30,10 +30,12 @@ class Workout(models.Model):
         blank=True,
         to=User,
         on_delete=models.CASCADE,
+        related_name='workouts'
     )
 
-    def is_base(self):
-        return self.creator is None
+    is_base = models.BooleanField(
+        default=False,
+    )
 
 
 class WorkoutHistory(models.Model):

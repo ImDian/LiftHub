@@ -6,7 +6,7 @@ from LiftHub.workouts.models import Workout
 class WorkoutBaseForm(forms.ModelForm):
     class Meta:
         model = Workout
-        exclude = ['creator']
+        exclude = ['creator', 'is_base']
 
 
 class WorkoutCreateForm(WorkoutBaseForm):

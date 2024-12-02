@@ -6,7 +6,7 @@ from LiftHub.meals.models import Meal
 class MealBaseForm(forms.ModelForm):
     class Meta:
         model = Meal
-        exclude = ['creator']
+        exclude = ['creator', 'is_base']
 
 
 class MealCreateForm(MealBaseForm):
