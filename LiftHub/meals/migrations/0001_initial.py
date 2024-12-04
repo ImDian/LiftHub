@@ -25,14 +25,4 @@ class Migration(migrations.Migration):
                 ('carbs', models.PositiveIntegerField()),
                 ('creator', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to='accounts.user')),
             ],
-        ),
-        migrations.CreateModel(
-            name='MealHistory',
-            fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('date', models.DateField(auto_now_add=True)),
-                ('meal', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='history', to='meals.meal')),
-                ('user', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='meal_history', to='accounts.user')),
-            ],
-        ),
-    ]
+        )]

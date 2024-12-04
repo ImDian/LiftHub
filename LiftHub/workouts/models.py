@@ -37,22 +37,6 @@ class Workout(models.Model):
         default=False,
     )
 
+    def __str__(self):
+        return self.name
 
-class WorkoutHistory(models.Model):
-    user = models.ForeignKey(
-        to=User,
-        on_delete=models.CASCADE,
-        related_name="workout_user",
-    )
-
-    workout = models.ForeignKey(
-        to=Workout,
-        on_delete=models.CASCADE,
-        related_name="workout_type",
-    )
-
-    date = models.DateField(
-        auto_now_add=True,
-        null=False,
-        blank=False,
-    )

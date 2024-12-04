@@ -1,7 +1,7 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render
 from django.urls import reverse_lazy
-from django.views.generic import ListView, CreateView
+from django.views.generic import ListView, CreateView, DetailView, UpdateView, DeleteView
 
 from LiftHub.meals.forms import MealCreateForm
 from LiftHub.meals.models import Meal
@@ -36,3 +36,18 @@ class MealsHomePage(ListView):
         context = super().get_context_data(**kwargs)
         context['base_meals'] = Meal.objects.filter(is_base=True)
         return context
+
+
+class MealsDetailsPage(DetailView):
+    model = Meal
+    template_name = 'meals/meals-details.html'
+
+
+class MealsEditPage(LoginRequiredMixin, UpdateView):
+    model = Meal
+    template_name = 'meals/meals-details.html'
+
+
+class MealsDeletePage(LoginRequiredMixin, DeleteView):
+    model = Meal
+    template_name = 'meals/meals-details.html'

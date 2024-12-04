@@ -1,5 +1,48 @@
 {% extends 'base.html' %}
 
 {% block content %}
+    <h1>Meal Calculator</h1>
 
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" name="action" value="calculate">Calculate</button>
+    </form>
+
+    {% if selected_meals %}
+        
+        <h3>Total Nutrition</h3>
+        <p>Calories: {{ total_calories }}</p>
+        <p>Protein: {{ total_protein }}g</p>
+        <p>Carbs: {{ total_carbs }}g</p>
+        <p>Fat: {{ total_fat }}g</p>
+        
+    {% endif %}
+
+    {% if selected_workouts %}
+        
+        <h3>Total Burn</h3>
+        <p>Calories burned: {{ total_burned_calories }}</p>
+        <p>{{ result }}</p>
+        
+    {% endif %}
+
+    {% if show_save_button and user.is_authenticated %}
+        
+        <form method="post">
+            {% csrf_token %}
+            <input type="hidden" name="total_calories" value="{{ total_calories }}">
+            <input type="hidden" name="total_protein" value="{{ total_protein }}">
+            <input type="hidden" name="total_carbs" value="{{ total_carbs }}">
+            <input type="hidden" name="total_fat" value="{{ total_fat }}">
+            <input type="hidden" name="result" value="{{ result }}">
+            <button type="submit" name="action" value="save">Save</button>
+        </form>
+        
+    {% endif %}
+
+    {% if message %}
+        <p>{{ message }}</p>
+    {% endif %}
+    
 {% endblock %}

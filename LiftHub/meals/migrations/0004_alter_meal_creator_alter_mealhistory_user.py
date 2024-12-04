@@ -18,9 +18,4 @@ class Migration(migrations.Migration):
             name='creator',
             field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL),
         ),
-        migrations.AlterField(
-            model_name='mealhistory',
-            name='user',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='meal_user', to=settings.AUTH_USER_MODEL),
-        ),
     ]

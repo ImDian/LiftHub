@@ -24,13 +24,4 @@ class Migration(migrations.Migration):
                 ('creator', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to='accounts.user')),
             ],
         ),
-        migrations.CreateModel(
-            name='WorkoutHistory',
-            fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('date', models.DateField(auto_now_add=True)),
-                ('user', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='workout_user', to='accounts.user')),
-                ('workout', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='workout_type', to='workouts.workout')),
-            ],
-        ),
-    ]
+        ]

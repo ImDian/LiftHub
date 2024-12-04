@@ -1,6 +1,6 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
-from django.views.generic import ListView, CreateView, TemplateView
+from django.views.generic import ListView, CreateView, TemplateView, DetailView, UpdateView, DeleteView
 from LiftHub.workouts.forms import WorkoutCreateForm
 from LiftHub.workouts.models import Workout
 
@@ -34,3 +34,18 @@ class WorkoutsHomePage(ListView):
         context = super().get_context_data(**kwargs)
         context['base_workouts'] = Workout.objects.filter(is_base=True)
         return context
+
+
+class WorkoutsDetailsPage(DetailView):
+    model = Workout
+    template_name = 'workouts/workouts-details.html'
+
+
+class WorkoutsEditPage(UpdateView):
+    model = Workout
+    template_name = 'workouts/workouts-details.html'
+
+
+class WorkoutsDeletePage(DeleteView):
+    model = Workout
+    template_name = 'workouts/workouts-details.html'

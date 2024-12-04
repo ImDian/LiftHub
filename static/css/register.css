@@ -1,0 +1,127 @@
+/* Center the form on the screen */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #40513B; /* Dark text color */
+    background-color: #EDF1D6; /* Bright background color */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Ensures footer placement */
+    min-height: 100vh;
+}
+
+/* Wrapper to center form */
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1; /* Fills the remaining height for centering */
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Adjusted gap for better spacing */
+    max-width: 400px;
+    width: 90%; /* Responsive width */
+    padding: 30px;
+    border-radius: 15px;
+    background-color: #9DC08B; /* Medium green for form background */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    color: #40513B; /* Dark text */
+    border: 1px solid #609966; /* Darker green border */
+}
+
+.title {
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+    color: #40513B; /* Darker green for title */
+}
+
+.form label {
+    position: relative;
+}
+
+.input {
+    background-color: #EDF1D6; /* Bright background for inputs */
+    color: #40513B; /* Dark text for contrast */
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #9DC08B; /* Green border */
+    border-radius: 10px;
+    font-size: 1em;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.input:focus {
+    border-color: #609966; /* Darker green focus border */
+    box-shadow: 0 0 5px rgba(96, 153, 102, 0.5);
+}
+
+.form label span {
+    color: #40513B; /* Darker text for label */
+    position: absolute;
+    left: 15px;
+    top: 15px;
+    font-size: 0.9em;
+    cursor: text;
+    transition: 0.3s ease;
+}
+
+/* Adjusted placeholder position for better spacing */
+.input:placeholder-shown + span {
+    top: 22px;
+    font-size: 0.9em;
+}
+
+.input:focus + span,
+.input:not(:placeholder-shown) + span {
+    color: #609966; /* Darker green for active label */
+    top: 5px;
+    font-size: 0.8em;
+    font-weight: bold;
+}
+
+.submit {
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    color: #EDF1D6; /* Bright text for button */
+    font-size: 1em;
+    font-weight: bold;
+    background-color: #609966; /* Dark green for button */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit:hover {
+    background-color: #40513B; /* Darker green on hover */
+}
+
+.signin {
+    text-align: center;
+    font-size: 0.9em;
+    color: #40513B; /* Darker text */
+}
+
+.signin a {
+    color: #609966; /* Link color */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.signin a:hover {
+    color: #40513B; /* Hover effect */
+}
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    color: #9DC08B; /* Bright green text color for footer */
+    font-size: 0.9em;
+    background-color: #EDF1D6; /* Ensure footer matches the body background */
+    margin-top: auto; /* Pushes footer to the bottom */
+}

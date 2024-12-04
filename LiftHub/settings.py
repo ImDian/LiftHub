@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     'LiftHub.posts',
     'LiftHub.workouts',
     "LiftHub.common.apps.CommonConfig",
-    "LiftHub.calculator.apps.CalculatorConfig"
+    "LiftHub.calculator.apps.CalculatorConfig",
 ]
 
 MIDDLEWARE = [

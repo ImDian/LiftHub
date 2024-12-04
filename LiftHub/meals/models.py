@@ -75,22 +75,5 @@ class Meal(models.Model):
             self.calories = self.calculate_calories()
         super().save(*args, **kwargs)
 
-
-class MealHistory(models.Model):
-    user = models.ForeignKey(
-        to=User,
-        on_delete=models.CASCADE,
-        related_name="meal_user",
-    )
-
-    meal = models.ForeignKey(
-        to=Meal,
-        on_delete=models.CASCADE,
-        related_name="meal_type",
-    )
-
-    date = models.DateField(
-        auto_now_add=True,
-        null=False,
-        blank=False,
-    )
+    def __str__(self):
+        return self.name

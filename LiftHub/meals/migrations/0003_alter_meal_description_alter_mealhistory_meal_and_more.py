@@ -17,14 +17,5 @@ class Migration(migrations.Migration):
             name='description',
             field=models.TextField(blank=True, max_length=300, null=True),
         ),
-        migrations.AlterField(
-            model_name='mealhistory',
-            name='meal',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='meal_type', to='meals.meal'),
-        ),
-        migrations.AlterField(
-            model_name='mealhistory',
-            name='user',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='meal_user', to='accounts.user'),
-        ),
+
     ]
