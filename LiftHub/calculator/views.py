@@ -8,7 +8,7 @@ from LiftHub.calculator.forms import CalculatorForm
 class CalculatorHomePage(FormView):
     template_name = 'calculator/calculator-home.html'
     form_class = CalculatorForm
-    success_url = reverse_lazy('calculator-home')  # Redirects back to the same page
+    success_url = reverse_lazy('calculator-home')
 
     def get_form_kwargs(self):
         kwargs = super().get_form_kwargs()
@@ -32,11 +32,11 @@ class CalculatorHomePage(FormView):
             remaining_calories = total_calories - total_burned_calories
 
             if remaining_calories > 0:
-                result = f'You finished the day on a {remaining_calories} calories surplus.'
+                result = f'{remaining_calories} calories surplus.'
             elif remaining_calories < 0:
-                result = f'You finished the day on a {remaining_calories} calories deficit.'
+                result = f'{remaining_calories} calories deficit.'
             else:
-                result = f'You finished the day on a caloric maintenance.'
+                result = 'caloric maintenance.'
 
             context = self.get_context_data(
                 form=form,

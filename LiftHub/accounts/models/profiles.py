@@ -1,3 +1,5 @@
+from datetime import date
+
 from django.contrib.auth import get_user_model
 from django.db import models
 
@@ -39,18 +41,29 @@ class Profile(models.Model):
         choices=GenderChoices.choices,
     )
 
-    date_of_birth = models.DateField(
+    age = models.PositiveIntegerField(
         blank=True,
         null=True,
     )
 
-    profile_picture = models.URLField(
+    bmr = models.FloatField(
         blank=True,
         null=True,
     )
 
-    def get_full_name(self):
-        if self.first_name and self.last_name:
-            return self.first_name + " " + self.last_name
+    picture = models.ImageField(
+        upload_to='profile_pictures/',
+        default='default.jpg'
+    )
 
-        return self.first_name or self.last_name or "Anonymous"
+    def get_basic_metabolic_rate(self):
+        if self.gender == 'Male':
+            bmr = 88.362 + (13.397 * self.weight) + (4.799 * self.height) - (5.677 * self.age)
+        else: # if Female
+            bmr = 88.362 + (13.397 * self.weight) + (4.799 * self.height) - (5.677 * self.age)
+
+        return bmr
+
+    def save(self, *args, **kwargs):
+        self.bmr = self.get_basic_metabolic_rate()
+        super().save(*args, **kwargs)

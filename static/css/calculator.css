@@ -1,0 +1,139 @@
+/* General body styling */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #40513B; /* Dark text color */
+    background-color: #EDF1D6; /* Bright background color */
+    display: flex;
+    justify-content: center; /* Centers content horizontally */
+    align-items: center; /* Centers content vertically */
+    min-height: 100vh;
+}
+
+/* Main container to hold the content */
+.main-body {
+    margin-top: 20px; /* Spacing from navigation bar */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 80%; /* Reduced width for better appearance */
+    max-width: 600px; /* Maximum width */
+    padding: 30px;
+    border-radius: 15px;
+    background-color: #9DC08B; /* Medium green for main body */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    color: #40513B;
+    border: 1px solid #609966;
+}
+
+/* Form layout */
+.calculator-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.form-row {
+    display: flex;
+    justify-content: center; /* Center the row */
+    gap: 20px; /* Space between fields */
+    width: 100%; /* Ensure full width */
+}
+
+.form-group {
+    flex: 1; /* Equal size for both fields */
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Space between label and input */
+    align-items: center; /* Center the group content */
+}
+
+/* Fields styling */
+.calculator-form label {
+    font-size: 1em;
+    font-weight: bold;
+    color: #40513B; /* Dark green for labels */
+    text-align: center; /* Center the label text */
+}
+
+.calculator-form .form-group input,
+.calculator-form .form-group select {
+    width: 100%; /* Make inputs and selects scale with container */
+    max-width: 200px; /* Limit their maximum width */
+    padding: 10px;
+    border: 1px solid #609966; /* Match the border color with theme */
+    border-radius: 5px;
+    font-size: 1em;
+    background-color: #EDF1D6; /* Light background */
+    color: #40513B; /* Dark text */
+}
+
+/* Checkboxes styling */
+.calculator-form .form-group ul {
+    list-style: none; /* Remove default list styling */
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Add spacing between items */
+    align-items: flex-start; /* Align items to the left */
+}
+
+.calculator-form .form-group ul li {
+    display: flex;
+    align-items: center; /* Align checkbox and label side by side */
+    gap: 10px; /* Add space between checkbox and label */
+}
+
+.calculator-form .form-group ul li label {
+    font-size: 1em; /* Match the font size for consistency */
+    color: #40513B; /* Dark green text */
+    cursor: pointer; /* Make the label clickable */
+}
+
+.calculator-form .form-group ul li input[type="checkbox"] {
+    width: 20px; /* Set a fixed width for checkboxes */
+    height: 20px; /* Set a fixed height for checkboxes */
+    cursor: pointer; /* Show pointer cursor on hover */
+}
+
+/* Buttons styling */
+button {
+    width: 120px; /* Fixed button width */
+    height: 40px; /* Fixed button height */
+    border: none;
+    border-radius: 10px;
+    color: #EDF1D6; /* Bright text */
+    font-size: 1em;
+    font-weight: bold;
+    background-color: #609966; /* Dark green for buttons */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: center;
+}
+
+button:hover {
+    background-color: #40513B; /* Darker green on hover */
+}
+
+/* Totals wrapper */
+.totals-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.totals-wrapper h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.totals-wrapper p {
+    font-size: 1em;
+    margin: 5px 0;
+}

@@ -1,8 +1,8 @@
+from django.contrib.auth import get_user_model
 from django.core.validators import MinValueValidator
 from django.db import models
 
-from django.contrib.auth.models import User
-
+UserModel = get_user_model()
 
 class Workout(models.Model):
     name = models.CharField(
@@ -28,7 +28,7 @@ class Workout(models.Model):
     creator = models.ForeignKey(
         null=True,
         blank=True,
-        to=User,
+        to=UserModel,
         on_delete=models.CASCADE,
         related_name='workouts'
     )

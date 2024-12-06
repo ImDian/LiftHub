@@ -1,4 +1,3 @@
-from itertools import chain
 from django import forms
 from django.db.models import Q
 
@@ -30,10 +29,5 @@ class CalculatorForm(forms.Form):
 
         combined_workouts = Workout.objects.filter(Q(is_base=True) | Q(creator=self.user))
 
-        # Set the queryset for meals and workouts fields
         self.fields['meals'].queryset = combined_meals
         self.fields['workouts'].queryset = combined_workouts
-
-        print("Combined Meals:", combined_meals)
-        print("Combined Workouts:", combined_workouts)
-        print(self.user)

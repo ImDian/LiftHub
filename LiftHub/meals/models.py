@@ -1,10 +1,11 @@
-from django.contrib.auth.models import User
+from django.contrib.auth import get_user_model
 from django.core.validators import MinValueValidator
 from django.db import models
 
 
 # Create your models here.
 
+UserModel = get_user_model()
 
 class Meal(models.Model):
     name = models.CharField(
@@ -54,7 +55,7 @@ class Meal(models.Model):
     creator = models.ForeignKey(
         null=True,
         blank=True,
-        to=User,
+        to=UserModel,
         on_delete=models.CASCADE,
         related_name='meals'
     )

@@ -9,7 +9,7 @@ urlpatterns = [
     path('logout/', LogoutView.as_view(), name='logout'),
     path('profiles/', include([
         path('', ProfileView.as_view(), name='profile'),
-        path('history/', HistoryView.as_view(), name='profile'),
+        path('history/', HistoryView.as_view(), name='history'),
     ]))
 ]
 
