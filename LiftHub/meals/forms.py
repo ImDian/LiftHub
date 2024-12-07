@@ -16,3 +16,6 @@ class MealCreateForm(MealBaseForm):
 class MealEditForm(MealBaseForm):
     pass
 
+
+class MealDeleteForm(MealBaseForm):
+    pass

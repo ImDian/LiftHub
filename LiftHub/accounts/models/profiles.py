@@ -7,6 +7,7 @@ from LiftHub.accounts.choices import GenderChoices
 
 UserModel = get_user_model()
 
+
 class Profile(models.Model):
     user = models.OneToOneField(
         to=UserModel,
@@ -59,7 +60,7 @@ class Profile(models.Model):
     def get_basic_metabolic_rate(self):
         if self.gender == 'Male':
             bmr = 88.362 + (13.397 * self.weight) + (4.799 * self.height) - (5.677 * self.age)
-        else: # if Female
+        else:  # if Female
             bmr = 88.362 + (13.397 * self.weight) + (4.799 * self.height) - (5.677 * self.age)
 
         return bmr

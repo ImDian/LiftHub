@@ -15,15 +15,8 @@
             <h1 class="title">Login</h1>
             <form method="post">
                 {% csrf_token %}
-                <label>
-                    <input type="text" name="username" class="input" placeholder=" " required>
-                    <span>Username</span>
-                </label>
-                <label>
-                    <input type="password" name="password" class="input" placeholder=" " required>
-                    <span>Password</span>
-                </label>
-                
+                {{ form.as_p }}
+
                 <button type="submit" class="submit">Login</button>
             </form>
             <p class="signin">Don't have an account? <a href="{% url 'register' %}">Sign up here</a>.</p>

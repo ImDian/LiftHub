@@ -12,32 +12,16 @@
 
 
 <div class="container">
-    <form class="form">
-        <p class="title">Register </p>
+    <form method="post" class="form">
+            {% csrf_token %}
+            <p class="title">Register</p>
 
-        <div class="flex">
-            <label>
-                <input class="input" type="text" placeholder="" required="">
-                <span>Username</span>
-            </label>
-        </div>
+            <!-- Render Django form fields -->
+            {{ form.as_p }}
 
-        <label>
-            <input class="input" type="email" placeholder="" required="">
-            <span>Email</span>
-        </label>
-
-        <label>
-            <input class="input" type="password" placeholder="" required="">
-            <span>Password</span>
-        </label>
-        <label>
-            <input class="input" type="password" placeholder="" required="">
-            <span>Confirm password</span>
-        </label>
-        <button class="submit">Submit</button>
-        <p class="signin">Already have an account ? <a href={% url 'login' %}>Login</a></p>
-    </form>
+            <button type="submit" class="submit">Submit</button>
+            <p class="signin">Already have an account? <a href="{% url 'login' %}">Login</a></p>
+        </form>
 
     <footer>
         <p>© 2024 SOFTUNI PROJECT FOR PYTHON WEB MODULE</p>

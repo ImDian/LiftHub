@@ -7,6 +7,7 @@ from django.db import models
 
 UserModel = get_user_model()
 
+
 class Meal(models.Model):
     name = models.CharField(
         max_length=30,

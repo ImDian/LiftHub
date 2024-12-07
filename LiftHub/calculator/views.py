@@ -53,7 +53,6 @@ class CalculatorHomePage(FormView):
             )
             return self.render_to_response(context)
 
-
         elif action == 'save':
 
             total_calories = float(self.request.POST.get('total_calories', 0))
@@ -80,7 +79,6 @@ class CalculatorHomePage(FormView):
             return self.render_to_response(context)
 
         return self.form_invalid(form)
-
 
     def form_invalid(self, form):
         return self.render_to_response(self.get_context_data(form=form))

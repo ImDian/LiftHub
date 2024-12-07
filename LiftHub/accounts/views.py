@@ -2,7 +2,6 @@ from django.contrib.auth import login
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, TemplateView, DeleteView, UpdateView, DetailView
-
 from LiftHub.accounts.models import Profile
 from LiftHub.accounts.models.history import History
 from LiftHub.forms import CustomUserForm
@@ -11,7 +10,7 @@ from LiftHub.forms import CustomUserForm
 class RegisterView(CreateView):
     form_class = CustomUserForm
     template_name = 'registration/register.html'
-    success_url = reverse_lazy('login')
+    success_url = reverse_lazy('home-page')
 
     def form_valid(self, form):
         response = super().form_valid(form)
@@ -40,4 +39,3 @@ class ProfileDeleteView(LoginRequiredMixin, DeleteView):
 class HistoryView(TemplateView):
     model = History
     template_name = 'history/history-home.html'
-

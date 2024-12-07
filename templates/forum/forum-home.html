@@ -1,4 +1,16 @@
 {% extends 'base.html' %}
 
 {% block content %}
+    
+    <a class='button' href="{% url 'create-post'%}">Create a post</a>
+    
+    
+    {% for post in approved_posts %}
+    
+        <p><a href={% url 'post-details' post.pk %}>by: {{ post.user.username }}</a></p>
+        <p>message:{{ post.content }}</p>
+        
+    {% endfor %}
+    
+    
 {% endblock %}

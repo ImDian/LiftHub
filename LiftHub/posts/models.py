@@ -6,6 +6,7 @@ from django.db import models
 
 UserModel = get_user_model()
 
+
 class Post(models.Model):
     user = models.ForeignKey(
         to=UserModel,

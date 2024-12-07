@@ -1,8 +1,8 @@
 from django import forms
 from django.db.models import Q
-
 from LiftHub.meals.models import Meal
 from LiftHub.workouts.models import Workout
+
 
 class CalculatorForm(forms.Form):
     meals = forms.ModelMultipleChoiceField(
@@ -25,9 +25,14 @@ class CalculatorForm(forms.Form):
         self.set_meals_and_workouts()
 
     def set_meals_and_workouts(self):
-        combined_meals = Meal.objects.filter(Q(is_base=True) | Q(creator=self.user))
+        if self.user.is_authenticated:
+            display_meals = Meal.objects.filter(Q(is_base=True) | Q(creator=self.user))  # base + user meals
+            display_workouts = Workout.objects.filter(Q(is_base=True) | Q(creator=self.user))  # base + user workouts
 
-        combined_workouts = Workout.objects.filter(Q(is_base=True) | Q(creator=self.user))
+        else:
+            display_meals = Meal.objects.filter(is_base=True)
+            display_workouts = Workout.objects.filter(is_base=True)
 
-        self.fields['meals'].queryset = combined_meals
-        self.fields['workouts'].queryset = combined_workouts
+        self.fields['meals'].queryset = display_meals
+        self.fields['workouts'].queryset = display_workouts
+
