@@ -86,7 +86,7 @@ WSGI_APPLICATION = 'LiftHub.wsgi.application'
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": "lifthub",
+        "NAME": "lifthub2",
         "USER": "postgres",
         "PASSWORD": "dido2486",
         "HOST": "127.0.0.1",

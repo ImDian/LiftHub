@@ -6,7 +6,7 @@ urlpatterns = [
     path('create/', views.CreateWorkoutView.as_view(), name='create-workout'),
     path('workout/<int:pk>/', include([
         path('', views.WorkoutsDetailsPage.as_view(), name='workout-details'),
-        path('edit/', views.WorkoutsEditPage.as_view(), name='workout-edit'),
+        path('edit/', views.WorkoutsEditPage.as_view(), name='edit-workout'),
         path('delete/', views.WorkoutsDeletePage.as_view(), name='delete-workout'),
     ]))
 ]

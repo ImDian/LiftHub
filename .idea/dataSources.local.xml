@@ -54,7 +54,9 @@
             <node kind="database" qname="@">
               <node kind="schema" qname="@" />
             </node>
-            <node kind="database" qname="lifthub">
+            <node kind="database">
+              <name qname="lifthub" />
+              <name qname="lifthub2" />
               <node kind="schema" qname="public" />
             </node>
           </node>

@@ -51,9 +51,14 @@ class ProfileEditView(LoginRequiredMixin, UpdateView):
             })
 
 
-class ProfileDeleteView(LoginRequiredMixin, DeleteView):
+class ProfileDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     model = Profile
-    template_name = 'profiles/profiles-home.html'
+    template_name = 'profiles/profile-delete.html'
+    success_url = reverse_lazy('login')
+
+    def test_func(self):
+        profile = get_object_or_404(Profile, user=self.kwargs['user']) #TODO FIX THIS
+        return self.request.user == profile.user
 
 
 class MealHistoryView(LoginRequiredMixin, UserPassesTestMixin, ListView):
@@ -90,4 +95,5 @@ class PostHistoryView(LoginRequiredMixin, UserPassesTestMixin, ListView):
     def get_queryset(self):
         user = self.get_user_from_slug()
         return Post.objects.filter(user=user)
+
 
