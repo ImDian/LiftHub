@@ -1,15 +1,17 @@
 from django.contrib.auth.views import LoginView, LogoutView
 from django.urls import path, include
 
-from LiftHub.accounts.views import RegisterView, ProfileView, HistoryView
+from LiftHub.accounts.views import RegisterView, ProfileView, MealHistoryView, ProfileEditView, PostHistoryView
 
 urlpatterns = [
     path('register/', RegisterView.as_view(), name='register'),
     path('login/', LoginView.as_view(), name='login'),
     path('logout/', LogoutView.as_view(), name='logout'),
-    path('profiles/<slug>', include([
+    path('profiles/<slug:slug>/', include([
         path('', ProfileView.as_view(), name='profile'),
-        path('history/', HistoryView.as_view(), name='history'),
+        path('edit/', ProfileEditView.as_view(), name='edit-profile'),
+        path('history/', MealHistoryView.as_view(), name='meal-history'),
+        path('posts/', PostHistoryView.as_view(), name='post-history'),
     ]))
 ]
 

@@ -5,8 +5,8 @@ from LiftHub.meals.models import Meal
 from LiftHub.workouts.models import Workout
 
 
-class History(models.Model):
-    user = models.ForeignKey(
+class MealHistory(models.Model):
+    user = models.OneToOneField(
         to=User,
         on_delete=models.CASCADE
     )

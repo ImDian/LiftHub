@@ -38,9 +38,13 @@ class MealsHomePage(ListView):
         return context
 
 
-class MealsDetailsPage(DetailView):
+class MealsDetailsPage(UserPassesTestMixin, DetailView):
     model = Meal
     template_name = 'meals/meals-details.html'
+
+    def test_func(self):  # can only view details on base meals and own meals
+        meal = get_object_or_404(Meal, pk=self.kwargs['pk'])
+        return self.request.user == meal.creator or meal.is_base
 
 
 class MealsEditPage(LoginRequiredMixin, UserPassesTestMixin, UpdateView):

@@ -4,6 +4,7 @@ from django.db import models
 
 UserModel = get_user_model()
 
+
 class Workout(models.Model):
     name = models.CharField(
         max_length=30,

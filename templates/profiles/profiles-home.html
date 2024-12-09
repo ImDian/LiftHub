@@ -1,10 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
 
-</body>
-</html>
+{% block content %}
+
+    <body class="profile-detail">
+
+    <div class="details">
+        <p><span class="field-label">PFP:</span> {{ profile.picture }}</p>
+        <p><span class="field-label">First name:</span> {{ profile.first_name }}</p>
+        <p><span class="field-label">Last name:</span> {{ profile.last_name }}</p>
+        <p><span class="field-label">Height:</span> {{ profile.height }}</p>
+        <p><span class="field-label">Weight:</span> {{ profile.weight }}</p>
+        <p><span class="field-label">Gender:</span> {{ profile.gender }}</p>
+        <p><span class="field-label">Age:</span> {{ profile.age }}</p>
+        <p><span class="field-label">BMR:</span> {{ profile.bmr }}</p>
+    </div>
+
+    <div class="actions">
+        {% if user.pk == profile.user.pk %}
+
+        <a href="{% url 'edit-profile' profile.slug %}" class="btn">Edit Profile</a>
+        <a href="{% url 'meal-history' profile.slug %}" class="btn">History</a>
+
+        {% endif %}
+
+        <a href="{% url 'meals-home' %}" class="btn">Posts</a>
+
+    </div>
+
+    </body>
+
+{% endblock %}

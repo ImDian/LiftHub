@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    
+	{% for data in meal_history %}
+        {{ data.result }}
+    {% endfor %}
+    
+{% endblock %}

@@ -15,6 +15,12 @@ class Profile(models.Model):
         primary_key=True,
     )
 
+    slug = models.SlugField(
+        null=False,
+        blank=True,
+        default='',
+    )
+
     first_name = models.CharField(
         max_length=30,
         blank=True,
@@ -47,7 +53,7 @@ class Profile(models.Model):
         null=True,
     )
 
-    bmr = models.FloatField(
+    bmr = models.PositiveIntegerField(
         blank=True,
         null=True,
     )
@@ -58,13 +64,15 @@ class Profile(models.Model):
     )
 
     def get_basic_metabolic_rate(self):
-        if self.gender == 'Male':
-            bmr = 88.362 + (13.397 * self.weight) + (4.799 * self.height) - (5.677 * self.age)
-        else:  # if Female
-            bmr = 88.362 + (13.397 * self.weight) + (4.799 * self.height) - (5.677 * self.age)
+        if self.age and self.weight and self.height:
+            if self.gender == 'Male':
+                bmr = 88.362 + (13.397 * self.weight) + (4.799 * self.height) - (5.677 * self.age)
+            else:  # if Female
+                bmr = 88.362 + (13.397 * self.weight) + (4.799 * self.height) - (5.677 * self.age)
 
-        return bmr
+            self.bmr = int(bmr)
 
     def save(self, *args, **kwargs):
-        self.bmr = self.get_basic_metabolic_rate()
+        self.slug = self.user.username
+        self.get_basic_metabolic_rate()
         super().save(*args, **kwargs)

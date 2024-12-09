@@ -1,7 +1,8 @@
 from django.urls import reverse_lazy
 from django.views.generic import FormView
 
-from LiftHub.accounts.models.history import History
+from LiftHub.accounts.models import Profile
+from LiftHub.accounts.models.history import MealHistory
 from LiftHub.calculator.forms import CalculatorForm
 
 
@@ -29,12 +30,17 @@ class CalculatorHomePage(FormView):
             selected_workouts = form.cleaned_data['workouts']
 
             total_burned_calories = sum(workout.calories_burned for workout in selected_workouts)
+
+            if self.request.user.is_authenticated:
+                user_profile_info = Profile.objects.get(user=self.request.user)
+                total_burned_calories += user_profile_info.bmr
+
             remaining_calories = total_calories - total_burned_calories
 
             if remaining_calories > 0:
                 result = f'{remaining_calories} calories surplus.'
             elif remaining_calories < 0:
-                result = f'{remaining_calories} calories deficit.'
+                result = f'{abs(remaining_calories)} calories deficit.'
             else:
                 result = 'caloric maintenance.'
 
@@ -62,7 +68,7 @@ class CalculatorHomePage(FormView):
             result = str(self.request.POST.get('result', ''))
 
             if self.request.user.is_authenticated:
-                History.objects.create(
+                MealHistory.objects.create(
                     user=self.request.user,
                     total_calories=total_calories,
                     total_protein=total_protein,

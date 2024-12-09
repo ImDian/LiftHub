@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    {% for post in post_history %}
+
+        <h3>{{ post.user.username }}'s posts:</h3>
+        <a href={% url 'post-details' post.pk %}>{{ post.content }} - {{ post.created_at }}</a>
+
+        {{ post.user.profile.slug }}
+        
+    {% endfor %}
+        {% if post.user.profile %}
+        <a href={% url 'profile' post.user.profile.slug %}>Back</a>
+        {% endif %}
+{% endblock %}
