@@ -2,9 +2,87 @@
 
 
 {% block content %}
-    <div class="content">
+    <div class="homepage-container">
+    <section class="hero-section">
+        <h1>Welcome to LiftHub</h1>
+        <p>Your ultimate tool to track daily calories, workouts, and reach your health goals effortlessly!</p>
+    </section>
 
-        <p>Hello, {{ user.username }}</p>
+    <section class="about-section">
+        <h2>How It Works</h2>
+        <p>Our platform helps you calculate your daily calorie intake and deducts it by the calories you burn during workouts. The result? A clear view of your daily progress: deficit, surplus, or maintenance.</p>
+        <p>With meals and workouts already implemented, it’s easy to get started. Simply select your options and see your results in no time.</p>
+    </section>
 
-    </div>
+    <section class="benefits-section">
+        <h2>Why Register?</h2>
+        <ul>
+            <li><strong>Forum Access:</strong> Connect with other users, ask questions, and share tips.</li>
+            <li><strong>Add Custom Meals and Workouts:</strong> Tailor the calculator to your unique needs.</li>
+            <li><strong>More Accurate Calculations:</strong> Provide your profile details like height, weight, and sex for personalized results.</li>
+            <li><strong>Body Fat Percentage Option:</strong> Enter your body fat percentage for even greater accuracy.</li>
+            <li><strong>Manual BMR Setting:</strong> Prefer your own input? Set your BMR manually.</li>
+        </ul>
+    </section>
+
+    <section class="profile-suggestion">
+        <h2>Optimize Your Experience</h2>
+        <p>If you haven’t already, create a profile and update your information to unlock all the features and ensure precise calculations.</p>
+        <p><a class="button" href={% url 'register' %} >Create Profile</a>
+    </section>
+
+    <section class="call-to-action">
+        <h2>Get Started Today!</h2>
+        <p>Whether you're aiming to lose weight, gain muscle, or maintain your fitness level, our tool is here to help.</p>
+        <a class="button-primary" href={% url "calculator-home" %} >Start Calculating</a>
+    </section>
+</div>
+<style>
+    .homepage-container {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+        line-height: 1.6;
+    }
+    .hero-section {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    .hero-section h1 {
+        font-size: 2.5em;
+        margin-bottom: 10px;
+    }
+    .about-section, .benefits-section, .profile-suggestion, .call-to-action {
+        margin-bottom: 30px;
+    }
+    h2 {
+        color: #333;
+        margin-bottom: 15px;
+    }
+    ul {
+        list-style: disc inside;
+        padding-left: 15px;
+    }
+    .button, .button-primary {
+        display: inline-block;
+        padding: 10px 15px;
+        text-decoration: none;
+        border-radius: 5px;
+        margin: 5px 0;
+    }
+    .button {
+        background: #f4f4f4;
+        color: #333;
+        border: 1px solid #ccc;
+    }
+    .button-primary {
+        background: #007BFF;
+        color: white;
+        border: none;
+    }
+    .button:hover, .button-primary:hover {
+        opacity: 0.8;
+    }
+
+</style>
+
 {% endblock %}

@@ -4,28 +4,27 @@
 
     <body class="profile-detail">
 
-    <div class="details">
-        <p><span class="field-label">PFP:</span> {{ profile.picture }}</p>
-        <p><span class="field-label">First name:</span> {{ profile.first_name }}</p>
-        <p><span class="field-label">Last name:</span> {{ profile.last_name }}</p>
-        <p><span class="field-label">Height:</span> {{ profile.height }}</p>
-        <p><span class="field-label">Weight:</span> {{ profile.weight }}</p>
-        <p><span class="field-label">Gender:</span> {{ profile.gender }}</p>
-        <p><span class="field-label">Age:</span> {{ profile.age }}</p>
-        <p><span class="field-label">BMR:</span> {{ profile.bmr }}</p>
-    </div>
+    <div class="profile-container">
+        <div class="details">
+            <p><span class="field-label">PFP:</span> {{ profile.picture }}</p>
+            <p><span class="field-label">First name:</span> {{ profile.first_name }}</p>
+            <p><span class="field-label">Last name:</span> {{ profile.last_name }}</p>
+            <p><span class="field-label">Height:</span> {{ profile.height }}</p>
+            <p><span class="field-label">Weight:</span> {{ profile.weight }}</p>
+            <p><span class="field-label">Sex:</span> {{ profile.sex }}</p>
+            <p><span class="field-label">Age:</span> {{ profile.age }}</p>
+            <p><span class="field-label">Body fat:</span> {{ profile.body_fat }}</p>
+            <p><span class="field-label">BMR:</span> {{ profile.bmr }}</p>
+        </div>
 
-    <div class="actions">
-        {% if user.pk == profile.user.pk %}
-
-        <a href="{% url 'edit-profile' profile.slug %}" class="btn">Edit Profile</a>
-        <a href="{% url 'meal-history' profile.slug %}" class="btn">History</a>
-        <a href="{% url 'delete-profile' profile.slug %}" class="btn">Delete Profile</a>    
-
-        {% endif %}
-
-        <a href="{% url 'post-history' profile.slug %}" class="btn">Posts</a>
-
+        <div class="actions">
+            <a href="{% url 'post-history' profile.slug %}" class="btn">Posts</a>
+            {% if user.pk == profile.user.pk %}
+                <a href="{% url 'meal-history' profile.slug %}" class="btn">History</a>
+                <a href="{% url 'edit-profile' profile.slug %}" class="btn">Edit Profile</a>
+                <a href="{% url 'delete-profile' profile.slug %}" class="btn delete-btn">Delete Profile</a>
+            {% endif %}
+        </div>
     </div>
 
     </body>

@@ -2,3 +2,8 @@
 @import './nav.css';
 @import './register.css';
 @import './calculator.css';
+/*@import './home.css';*/
+@import './login.css';
+@import './meals-and-workouts-home.css';
+@import './meal-details.css';
+@import './profile-home.css';

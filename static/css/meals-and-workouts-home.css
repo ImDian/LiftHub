@@ -1,0 +1,95 @@
+/* Namespace your CSS with a unique class for both pages */
+.meals-home, .workouts-home {
+    font-family: Arial, sans-serif;
+    color: #40513B; /* Darkest color for text */
+    background-color: #EDF1D6; /* Brightest color for background */
+    padding-top: 20px; /* Add some space from the top for the entire container */
+}
+
+/* Heading styles for both meals and workouts */
+.meals-home h3, .workouts-home h3 {
+    color: #609966;
+    border-bottom: 2px solid #9DC08B;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+    text-align: center; /* Center the heading text */
+}
+
+/* Common list styles for both meals and workouts */
+.meals-home ul, .workouts-home ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+/* List item styles for both meals and workouts */
+.meals-home ul li, .workouts-home ul li {
+    background-color: #9DC08B;
+    color: #EDF1D6;
+    padding: 5px;
+    margin-bottom: 5px;
+    border-radius: 1px;
+    text-align: center; /* Center the list item text */
+    max-width: 30ch; /* Fixed width for text */
+    overflow: hidden; /* Ensure no overflow */
+    white-space: nowrap; /* Prevent wrapping */
+    text-overflow: ellipsis; /* Add ellipsis for long text */
+}
+
+/* Link styles for meals and workouts */
+.meals-home .meal-link, .workouts-home .workout-link {
+    color: #EDF1D6;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* Hover effect for links in both pages */
+.meals-home .meal-link:hover, .workouts-home .workout-link:hover {
+    text-decoration: underline;
+}
+
+/* Actions section styles for both pages */
+.meals-home .actions, .workouts-home .actions {
+    margin-top: 20px;
+    text-align: center; /* Center-align the buttons */
+}
+
+/* Button styles for both pages */
+.meals-home .actions .btn, .workouts-home .actions .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #609966;
+    color: #EDF1D6;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* Button hover effect for both pages */
+.meals-home .actions .btn:hover, .workouts-home .actions .btn:hover {
+    background-color: #40513B;
+}
+
+/* Link styles in actions for both pages */
+.meals-home .actions .link, .workouts-home .actions .link {
+    color: #609966;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+/* Link hover effect in actions for both pages */
+.meals-home .actions .link:hover, .workouts-home .actions .link:hover {
+    color: #40513B;
+}
+
+/* Styling for the specific meal and workout containers */
+.meals-home .my-meals, .workouts-home .my-workouts,
+.meals-home .base-meals, .workouts-home .base-workouts {
+    margin: 30px auto; /* Add vertical space and center horizontally */
+    padding: 15px;
+    background-color: #9DC08B;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    width: 32ch; /* Limit the box width */
+    height: calc(5 * 40px + 30px); /* Fixed height for 5 items with padding */
+    text-align: center; /* Center-align the content */
+}

@@ -5,42 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="83ea767e-4f46-4fcf-aab4-77b2b72487bd" name="Changes" comment="update">
-      <change afterPath="$PROJECT_DIR$/LiftHub/accounts/migrations/0015_alter_mealhistory_user.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/workouts/delete-workout.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LiftHub/accounts/migrations/0016_rename_gender_profile_sex_profile_body_fat_and_more.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LiftHub/posts/migrations/0004_alter_postlike_unique_together_remove_postlike_post_and_more.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/home.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/meal-details.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/meals-and-workouts-home.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/profile-home.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/LiftHub.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/LiftHub.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LiftHub/accounts/models/history.py" beforeDir="false" afterPath="$PROJECT_DIR$/LiftHub/accounts/models/history.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LiftHub/accounts/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/LiftHub/accounts/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LiftHub/accounts/choices.py" beforeDir="false" afterPath="$PROJECT_DIR$/LiftHub/accounts/choices.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LiftHub/accounts/models/profiles.py" beforeDir="false" afterPath="$PROJECT_DIR$/LiftHub/accounts/models/profiles.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LiftHub/accounts/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/LiftHub/accounts/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LiftHub/common/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/LiftHub/common/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LiftHub/meals/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/LiftHub/meals/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LiftHub/posts/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/LiftHub/posts/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LiftHub/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/LiftHub/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LiftHub/workouts/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/LiftHub/workouts/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LiftHub/workouts/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/LiftHub/workouts/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LiftHub/workouts/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/LiftHub/workouts/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/common/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/calculator/calculator-home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/calculator/calculator-home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/common/nav.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/common/nav.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/forum/create-post.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/forum/create-post.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/forum/delete-post.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/forum/delete-post.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/forum/edit-post.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/forum/edit-post.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/forum/forum-home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/forum/forum-home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/forum/post-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/forum/post-details.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/history/history-home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/history/history-home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/history/meal-history.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/history/meal-history.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/history/post-history.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/history/post-history.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/common/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/meals/create-meal.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/meals/create-meal.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/meals/delete-meal.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/meals/delete-meal.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/meals/edit-meal.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/meals/edit-meal.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/meals/meals-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/meals/meals-details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/calculator.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/calculator.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/common/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/common/home.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/meals/meals-home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/meals/meals-home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/profiles/profile-delete.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/profiles/profile-delete.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/profiles/profile-edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/profiles/profile-edit.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/profiles/profiles-home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/profiles/profiles-home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/workouts/create-workout.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/workouts/create-workout.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/workouts/edit-workout.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/workouts/edit-workout.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/workouts/workouts-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/workouts/workouts-details.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/workouts/workouts-home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/workouts/workouts-home.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -54,9 +39,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
         <option value="Python Script" />
         <option value="HTML File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -69,12 +54,12 @@
     &quot;assignee&quot;: &quot;ImDian&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/ImDian/LiftHub.git&quot;,
-    &quot;accountId&quot;: &quot;003b8962-ca6e-42c1-ab96-b2658ddf6081&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/ImDian/LiftHub.git",
+    "accountId": "a3f1fdf9-fc73-44a6-9f7b-f02769bb2bd5"
   }
-}</component>
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
 }</component>
@@ -195,8 +180,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-PY-241.18034.82" />
-        <option value="bundled-python-sdk-975db3bf15a3-2767605e8bc2-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-241.18034.82" />
+        <option value="bundled-js-predefined-d6986cc7102b-e768b9ed790e-JavaScript-PY-243.21565.199" />
+        <option value="bundled-python-sdk-cab1f2013843-4ae2d6a61b08-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-243.21565.199" />
       </set>
     </attachedChunks>
   </component>
@@ -239,6 +224,7 @@
       <workItem from="1733739342466" duration="9532000" />
       <workItem from="1733752245896" duration="12386000" />
       <workItem from="1733779766071" duration="2662000" />
+      <workItem from="1733825953487" duration="19175000" />
     </task>
     <task id="LOCAL-00001" summary="changed the UI and added workouts/meals functionalities">
       <option name="closed" value="true" />

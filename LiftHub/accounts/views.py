@@ -1,10 +1,9 @@
 from django.contrib.auth import login
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.auth.models import User
-from django.shortcuts import get_object_or_404, redirect
+from django.shortcuts import get_object_or_404
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, DeleteView, UpdateView, DetailView, ListView
-
 from LiftHub.accounts.forms import ProfileEditForm
 from LiftHub.accounts.models import Profile
 from LiftHub.accounts.models.history import MealHistory
@@ -57,7 +56,7 @@ class ProfileDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     success_url = reverse_lazy('login')
 
     def test_func(self):
-        profile = get_object_or_404(Profile, user=self.kwargs['user']) #TODO FIX THIS
+        profile = get_object_or_404(Profile, user=self.kwargs['user']) # TODO FIX THIS
         return self.request.user == profile.user
 
 

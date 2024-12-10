@@ -1,5 +1,4 @@
-from django.views.generic import DetailView, CreateView, TemplateView
-
+from django.views.generic import TemplateView
 
 class HomePage(TemplateView):
     template_name = "common/home.html"
