@@ -1,6 +1,6 @@
 from django import forms
 
-from LiftHub.posts.models import Post
+from LiftHub.posts.models import Post, Comment
 
 
 class PostBaseForm(forms.ModelForm):
@@ -16,3 +16,16 @@ class PostCreateForm(PostBaseForm):
 class PostEditForm(PostBaseForm):
     pass
 
+
+class CommentBaseForm(forms.ModelForm):
+    class Meta:
+        model = Comment
+        fields = ['content']
+
+
+class CommentCreateForm(CommentBaseForm):
+    pass
+
+
+class CommentEditForm(CommentBaseForm):
+    pass

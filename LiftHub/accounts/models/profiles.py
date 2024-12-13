@@ -63,7 +63,8 @@ class Profile(models.Model):
 
     bmr = models.PositiveIntegerField(
         blank=True,
-        null=True,
+        null=False,
+        default=0,
         validators=[
             MinValueValidator(0),
         ]
@@ -78,8 +79,10 @@ class Profile(models.Model):
     )
 
     picture = models.ImageField(
-        upload_to='profile_pictures/',
-        default='default.jpg'
+        upload_to='profile_picture/',
+        default='profile_picture/default_pfp.jpg',
+        blank=True,
+        null=False,
     )
 
     def get_basic_metabolic_rate(self):
@@ -98,4 +101,6 @@ class Profile(models.Model):
     def save(self, *args, **kwargs):
         self.slug = self.user.username
         self.get_basic_metabolic_rate()
+        if not self.picture:
+            self.picture = 'profile_picture/default_pfp.jpg'
         super().save(*args, **kwargs)

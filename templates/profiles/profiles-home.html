@@ -1,12 +1,11 @@
 {% extends 'common/base.html' %}
-
 {% block content %}
 
     <body class="profile-detail">
 
     <div class="profile-container">
         <div class="details">
-            <p><span class="field-label">PFP:</span> {{ profile.picture }}</p>
+            <p><img src="{{ profile.picture.url }}" alt="profile-picture"> </p>
             <p><span class="field-label">First name:</span> {{ profile.first_name }}</p>
             <p><span class="field-label">Last name:</span> {{ profile.last_name }}</p>
             <p><span class="field-label">Height:</span> {{ profile.height }}</p>

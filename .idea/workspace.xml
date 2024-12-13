@@ -5,28 +5,53 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="83ea767e-4f46-4fcf-aab4-77b2b72487bd" name="Changes" comment="update">
-      <change afterPath="$PROJECT_DIR$/LiftHub/accounts/migrations/0016_rename_gender_profile_sex_profile_body_fat_and_more.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LiftHub/posts/migrations/0004_alter_postlike_unique_together_remove_postlike_post_and_more.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/home.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/meal-details.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/meals-and-workouts-home.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/profile-home.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/LiftHub.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/LiftHub.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LiftHub/accounts/managers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/javascript/meal-and-workout-selection.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/forum/create-comment.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LiftHub/accounts/choices.py" beforeDir="false" afterPath="$PROJECT_DIR$/LiftHub/accounts/choices.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LiftHub/accounts/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/LiftHub/accounts/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LiftHub/accounts/migrations/0002_delete_user.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LiftHub/accounts/migrations/0003_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LiftHub/accounts/migrations/0004_history.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LiftHub/accounts/migrations/0005_alter_history_result.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LiftHub/accounts/migrations/0006_remove_profile_profile_picture_profile_picture.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LiftHub/accounts/migrations/0007_remove_profile_date_of_birth_profile_age_profile_bmr.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LiftHub/accounts/migrations/0008_profile_slug.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LiftHub/accounts/migrations/0009_alter_profile_slug.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LiftHub/accounts/migrations/0010_alter_profile_slug.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LiftHub/accounts/migrations/0011_alter_profile_bmr.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LiftHub/accounts/migrations/0012_rename_history_mealhistory.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LiftHub/accounts/migrations/0013_alter_profile_bmr.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LiftHub/accounts/migrations/0014_alter_mealhistory_user_alter_profile_bmr.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LiftHub/accounts/migrations/0015_alter_mealhistory_user.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LiftHub/accounts/migrations/0016_rename_gender_profile_sex_profile_body_fat_and_more.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LiftHub/accounts/models/accounts.py" beforeDir="false" afterPath="$PROJECT_DIR$/LiftHub/accounts/models/accounts.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LiftHub/accounts/models/history.py" beforeDir="false" afterPath="$PROJECT_DIR$/LiftHub/accounts/models/history.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LiftHub/accounts/models/profiles.py" beforeDir="false" afterPath="$PROJECT_DIR$/LiftHub/accounts/models/profiles.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LiftHub/accounts/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/LiftHub/accounts/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LiftHub/common/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/LiftHub/common/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LiftHub/posts/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/LiftHub/posts/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LiftHub/meals/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/LiftHub/meals/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LiftHub/meals/migrations/0002_alter_meal_calories_alter_meal_carbs_alter_meal_fat_and_more.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LiftHub/meals/migrations/0003_alter_meal_description_alter_mealhistory_meal_and_more.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LiftHub/meals/migrations/0004_alter_meal_creator_alter_mealhistory_user.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LiftHub/meals/migrations/0005_alter_meal_creator.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LiftHub/meals/migrations/0006_meal_is_base.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LiftHub/posts/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/LiftHub/posts/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LiftHub/posts/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/LiftHub/posts/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LiftHub/posts/migrations/0002_alter_post_image.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LiftHub/posts/migrations/0003_alter_post_image.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LiftHub/posts/migrations/0004_alter_postlike_unique_together_remove_postlike_post_and_more.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LiftHub/posts/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/LiftHub/posts/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LiftHub/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/LiftHub/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/calculator.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/calculator.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LiftHub/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/LiftHub/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LiftHub/workouts/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/LiftHub/workouts/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LiftHub/workouts/migrations/0002_alter_workout_creator_alter_workouthistory_user.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LiftHub/workouts/migrations/0003_workout_is_base_alter_workout_creator.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/nav.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/nav.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/common/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/common/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/meals/meals-home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/meals/meals-home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/common/nav.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/common/nav.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/profiles/profile-edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/profiles/profile-edit.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/profiles/profiles-home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/profiles/profiles-home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/workouts/workouts-home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/workouts/workouts-home.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,9 +64,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
-        <option value="HTML File" />
         <option value="CSS File" />
+        <option value="HTML File" />
+        <option value="JavaScript File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -54,12 +80,12 @@
     &quot;assignee&quot;: &quot;ImDian&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/ImDian/LiftHub.git",
-    "accountId": "a3f1fdf9-fc73-44a6-9f7b-f02769bb2bd5"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/ImDian/LiftHub.git&quot;,
+    &quot;accountId&quot;: &quot;a3f1fdf9-fc73-44a6-9f7b-f02769bb2bd5&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
 }</component>
@@ -103,11 +129,11 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Dido\PycharmProjects\LiftHub2" />
+      <recent name="C:\Users\Dido\PycharmProjects\LiftHub2\static" />
+      <recent name="C:\Users\Dido\PycharmProjects\LiftHub2\LiftHub" />
       <recent name="C:\Users\dianc\PycharmProjects\LiftHub\templates\common" />
       <recent name="C:\Users\dianc\PycharmProjects\LiftHub\templates\history" />
-      <recent name="C:\Users\Dido\PycharmProjects\LiftHub\LiftHub" />
-      <recent name="C:\Users\Dido\PycharmProjects\LiftHub\static\css" />
-      <recent name="C:\Users\Dido\PycharmProjects\LiftHub\static" />
     </key>
   </component>
   <component name="RunManager" selected="Django Server.LiftHub">
@@ -224,7 +250,11 @@
       <workItem from="1733739342466" duration="9532000" />
       <workItem from="1733752245896" duration="12386000" />
       <workItem from="1733779766071" duration="2662000" />
-      <workItem from="1733825953487" duration="19175000" />
+      <workItem from="1733825953487" duration="19210000" />
+      <workItem from="1733911149801" duration="3463000" />
+      <workItem from="1733929023314" duration="18980000" />
+      <workItem from="1733995137691" duration="5835000" />
+      <workItem from="1734016426381" duration="2560000" />
     </task>
     <task id="LOCAL-00001" summary="changed the UI and added workouts/meals functionalities">
       <option name="closed" value="true" />
@@ -266,7 +296,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733769753564</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="update">
+      <option name="closed" value="true" />
+      <created>1733869195117</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1733869195118</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -1,6 +1,8 @@
+{% load static %}
+
 <nav>
     <div class="logo">
-        <a href={% url 'home-page'%}>SoftUni Logo</a>
+        <a href={% url 'home-page'%}><img src="{% static 'lifthub_logo.png' %}" alt="description"></a>
     </div>
     <ul class="nav-links">
         <li><a href="{% url 'forum-home'%}">Forum</a></li>

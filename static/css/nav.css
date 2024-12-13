@@ -3,7 +3,7 @@ nav {
     justify-content: space-between;
     align-items: center;
     background-color: #609966; /* Medium dark green for navbar */
-    padding: 15px 30px; /* Slightly larger padding for a taller navbar */
+    padding: 3px 30px; /* Slightly larger padding for a taller navbar */
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     width: 100vw; /* Use viewport width to force full width */
     margin: 0; /* Removes unintended margins */
@@ -11,20 +11,18 @@ nav {
 }
 
 
-.logo a {
-    font-size: 1.5em;
-    font-weight: bold;
-    text-decoration: none;
-    color: #EDF1D6; /* Bright text for the logo */
+img {
+    width: 65px;
+    margin-left: 20px;
 }
 
 .nav-links {
     list-style: none;
     display: flex;
     gap: 25px;
-    margin: 0;
     padding: 0;
     font-family: "Poppins", sans-serif; /* Elegant modern font for navbar */
+    margin-left: 95px;
 }
 
 .nav-links a {
@@ -34,6 +32,7 @@ nav {
     text-transform: uppercase; /* Capitalize text */
     font-size: 1em; /* Increased size for readability */
     transition: color 0.3s ease;
+    justify-content: center;
 }
 
 .nav-links a:hover {

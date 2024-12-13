@@ -3,7 +3,7 @@ from django.shortcuts import get_object_or_404
 from django.urls import reverse_lazy
 from django.views.generic import ListView, DetailView, UpdateView, CreateView, DeleteView
 
-from LiftHub.posts.forms import PostCreateForm, PostEditForm
+from LiftHub.posts.forms import PostCreateForm, PostEditForm, CommentCreateForm
 from LiftHub.posts.models import Post, Comment
 
 
@@ -67,3 +67,27 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     form_class = PostEditForm
     template_name = 'forum/edit-post.html'
 
+    def test_func(self):
+        post = get_object_or_404(Post, pk=self.kwargs['pk'])
+        return self.request.user == post.user # TODO fix
+
+
+class CommentCreateView(LoginRequiredMixin, CreateView):
+    model = Comment
+    form_class = CommentCreateForm
+    template_name = 'forum/create-comment.html'
+
+    def form_valid(self, form):
+        comment = form.save(commit=False)
+        comment.creator = self.request.user
+
+        return super().form_valid(form)
+
+    def get_success_url(self):
+        return reverse_lazy(
+            'post-details',
+            kwargs={
+                'username': self.kwargs['username'],
+                'pk': self.kwargs['pk'],
+            }
+        )

@@ -1,3 +1,4 @@
+from django.contrib.auth import get_user_model
 from django.contrib.auth.models import User
 from django.db import models
 
@@ -5,9 +6,11 @@ from LiftHub.meals.models import Meal
 from LiftHub.workouts.models import Workout
 
 
+UserModel = get_user_model()
+
 class MealHistory(models.Model):
     user = models.ForeignKey(
-        to=User,
+        to=UserModel,
         on_delete=models.CASCADE
     )
 

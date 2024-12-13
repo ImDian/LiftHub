@@ -1,4 +1,4 @@
-from django.contrib.auth import login
+from django.contrib.auth import login, get_user_model
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.auth.models import User
 from django.shortcuts import get_object_or_404
@@ -10,25 +10,17 @@ from LiftHub.accounts.models.history import MealHistory
 from LiftHub.forms import CustomUserForm
 from LiftHub.posts.models import Post
 
+UserModel = get_user_model()
 
 class RegisterView(CreateView):
     form_class = CustomUserForm
     template_name = 'registration/register.html'
+    success_url = reverse_lazy('home-page')
 
     def form_valid(self, form):
         response = super().form_valid(form)
         login(self.request, self.object)
         return response
-
-    def get_success_url(self):
-        reverse_lazy(
-            'edit-profile',
-            kwargs={
-                'slug': self.object.profile.slug,
-            })
-
-
-# TODO fix
 
 
 class ProfileView(LoginRequiredMixin, DetailView):
@@ -37,10 +29,18 @@ class ProfileView(LoginRequiredMixin, DetailView):
     related_name = 'profile'
 
 
-class ProfileEditView(LoginRequiredMixin, UpdateView):
+class ProfileEditView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Profile
     template_name = 'profiles/profile-edit.html'
     form_class = ProfileEditForm
+
+    def get_user_from_slug(self):  # helper method
+        slug = self.kwargs.get('slug')
+        return get_object_or_404(UserModel, username=slug)
+
+    def test_func(self):
+        user = self.get_user_from_slug()
+        return self.request.user == user
 
     def get_success_url(self):
         return reverse_lazy(
@@ -55,9 +55,13 @@ class ProfileDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     template_name = 'profiles/profile-delete.html'
     success_url = reverse_lazy('login')
 
+    def get_user_from_slug(self):  # helper method
+        slug = self.kwargs.get('slug')
+        return get_object_or_404(UserModel, username=slug)
+
     def test_func(self):
-        profile = get_object_or_404(Profile, user=self.kwargs['user']) # TODO FIX THIS
-        return self.request.user == profile.user
+        user = self.get_user_from_slug()
+        return self.request.user == user
 
 
 class MealHistoryView(LoginRequiredMixin, UserPassesTestMixin, ListView):
@@ -67,7 +71,7 @@ class MealHistoryView(LoginRequiredMixin, UserPassesTestMixin, ListView):
 
     def get_user_from_slug(self):  # helper method
         slug = self.kwargs.get('slug')
-        return get_object_or_404(User, username=slug)
+        return get_object_or_404(UserModel, username=slug)
 
     def test_func(self):
         user = self.get_user_from_slug()
@@ -94,5 +98,3 @@ class PostHistoryView(LoginRequiredMixin, UserPassesTestMixin, ListView):
     def get_queryset(self):
         user = self.get_user_from_slug()
         return Post.objects.filter(user=user)
-
-

@@ -86,7 +86,7 @@ WSGI_APPLICATION = 'LiftHub.wsgi.application'
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": "lifthub2",
+        "NAME": "lifthub4",
         "USER": "postgres",
         "PASSWORD": "dido2486",
         "HOST": "127.0.0.1",
@@ -134,6 +134,10 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = (
     BASE_DIR / 'static',
 )
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
@@ -141,3 +145,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_REDIRECT_URL = reverse_lazy('home-page')
 LOGOUT_REDIRECT_URL = reverse_lazy('home-page')
+AUTH_USER_MODEL = 'accounts.AppUser'

@@ -28,7 +28,12 @@
     <section class="profile-suggestion">
         <h2>Optimize Your Experience</h2>
         <p>If you haven’t already, create a profile and update your information to unlock all the features and ensure precise calculations.</p>
-        <p><a class="button" href={% url 'register' %} >Create Profile</a>
+        {% if user.is_authenticated %}
+        <p><a class="button" href={% url 'profile' user.profile.slug %}>Update Profile</a>
+        {% else %}
+            <p><a class="button" href={% url 'register' %} >Create Profile</a>
+            {% endif %}
+
     </section>
 
     <section class="call-to-action">
