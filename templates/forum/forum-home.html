@@ -9,6 +9,9 @@
     
         <p><a href={% url 'post-details' post.pk %}>by: {{ post.user.username }}</a></p>
         <p>message:{{ post.content }}</p>
+        {% if post.image %}
+        <img src="{{ post.image.url }}" alt="pic">
+        {% endif %}
         
     {% endfor %}
     

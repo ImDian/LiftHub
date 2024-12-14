@@ -23,18 +23,18 @@ class Profile(models.Model):
 
     first_name = models.CharField(
         max_length=30,
-        blank=True,
+        blank=False,
         null=True,
     )
 
     last_name = models.CharField(
         max_length=30,
-        blank=True,
+        blank=False,
         null=True,
     )
 
     height = models.FloatField(
-        blank=True,
+        blank=False,
         null=True,
         validators=[
             MinValueValidator(0),
@@ -42,7 +42,7 @@ class Profile(models.Model):
     )
 
     weight = models.FloatField(
-        blank=True,
+        blank=False,
         null=True,
         validators=[
             MinValueValidator(0),
@@ -55,8 +55,9 @@ class Profile(models.Model):
     )
 
     age = models.PositiveIntegerField(
-        blank=True,
-        null=True,validators=[
+        blank=False,
+        null=True,
+        validators=[
             MinValueValidator(1),
         ]
     )
@@ -79,13 +80,20 @@ class Profile(models.Model):
     )
 
     picture = models.ImageField(
-        upload_to='profile_picture/',
+        upload_to='profile_picture/users',
         default='profile_picture/default_pfp.jpg',
         blank=True,
         null=False,
     )
 
+    is_completed = models.BooleanField(
+        default=False,
+    )
+
     def get_basic_metabolic_rate(self):
+        if self.bmr:  # if it's a custom bmr, don't change it
+            return
+
         if self.body_fat:  # use more accurate formula
             lean_body_mass = self.weight * (1 - (self.body_fat / 100))
             self.bmr = floor(370 + (21.6 * lean_body_mass))

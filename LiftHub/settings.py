@@ -56,6 +56,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    'LiftHub.middlewares.ProfileCompletionMiddleware'
 ]
 
 ROOT_URLCONF = 'LiftHub.urls'
@@ -86,11 +88,11 @@ WSGI_APPLICATION = 'LiftHub.wsgi.application'
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": "lifthub4",
+        "NAME": "postgres",
         "USER": "postgres",
         "PASSWORD": "dido2486",
         "HOST": "127.0.0.1",
-        "PORT": "5432",
+        "PORT": "5433",
     }
 }
 

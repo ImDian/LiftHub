@@ -1,6 +1,5 @@
 from django.contrib.auth import login, get_user_model
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
-from django.contrib.auth.models import User
 from django.shortcuts import get_object_or_404
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, DeleteView, UpdateView, DetailView, ListView
@@ -11,6 +10,7 @@ from LiftHub.forms import CustomUserForm
 from LiftHub.posts.models import Post
 
 UserModel = get_user_model()
+
 
 class RegisterView(CreateView):
     form_class = CustomUserForm
@@ -49,11 +49,19 @@ class ProfileEditView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
                 'slug': self.kwargs['slug'],
             })
 
+    def form_valid(self, form):
+        response = super().form_valid(form)
+        profile = self.object
+        profile.is_completed = True
+        profile.save()
+
+        return response
+
 
 class ProfileDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     model = Profile
     template_name = 'profiles/profile-delete.html'
-    success_url = reverse_lazy('login')
+    success_url = reverse_lazy('home-page')
 
     def get_user_from_slug(self):  # helper method
         slug = self.kwargs.get('slug')
@@ -62,6 +70,11 @@ class ProfileDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     def test_func(self):
         user = self.get_user_from_slug()
         return self.request.user == user
+
+    def form_valid(self, form):
+        user = self.get_user_from_slug()
+        user.delete()
+        return super().form_valid(form)
 
 
 class MealHistoryView(LoginRequiredMixin, UserPassesTestMixin, ListView):
@@ -89,7 +102,7 @@ class PostHistoryView(LoginRequiredMixin, UserPassesTestMixin, ListView):
 
     def get_user_from_slug(self):  # helper method
         slug = self.kwargs.get('slug')
-        return get_object_or_404(User, username=slug)
+        return get_object_or_404(UserModel, username=slug)
 
     def test_func(self):
         user = self.get_user_from_slug()

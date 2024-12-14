@@ -8,6 +8,7 @@ from LiftHub.workouts.models import Workout
 
 UserModel = get_user_model()
 
+
 class MealHistory(models.Model):
     user = models.ForeignKey(
         to=UserModel,
