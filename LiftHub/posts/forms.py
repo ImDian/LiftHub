@@ -6,7 +6,7 @@ from LiftHub.posts.models import Post, Comment
 class PostBaseForm(forms.ModelForm):
     class Meta:
         model = Post
-        exclude = ['approved', 'user']
+        exclude = ['is_approved', 'user', 'has_been_edited']
 
 
 class PostCreateForm(PostBaseForm):
@@ -14,7 +14,9 @@ class PostCreateForm(PostBaseForm):
 
 
 class PostEditForm(PostBaseForm):
-    pass
+    class Meta:
+        model = Post
+        exclude = ['is_approved', 'user', 'image', 'has_been_edited']
 
 
 class CommentBaseForm(forms.ModelForm):

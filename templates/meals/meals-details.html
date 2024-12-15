@@ -87,8 +87,8 @@
 
     <div class="actions">
 
-        <a href="{% url 'edit-meal' meal.id %}" class="btn">Edit Meal</a>
-        <a class="btn" href="{% url 'delete-meal' meal.pk %}">Delete</a>
+        <a href="{% url 'meal-edit' meal.id %}" class="btn">Edit Meal</a>
+        <a class="btn" href="{% url 'meal-delete' meal.pk %}">Delete</a>
         <a href="{% url 'meals-home' %}" class="btn">Back to Meals</a>
         
     </div>

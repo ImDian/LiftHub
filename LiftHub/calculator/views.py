@@ -32,8 +32,8 @@ class CalculatorHomePage(FormView):
             total_burned_calories = sum(workout.calories_burned for workout in selected_workouts)
 
             if self.request.user.is_authenticated:
-                user_profile_info = Profile.objects.get(user=self.request.user)
-                total_burned_calories += user_profile_info.bmr
+                profile = Profile.objects.get(user=self.request.user)
+                total_burned_calories += profile.bmr
 
             remaining_calories = total_calories - total_burned_calories
 

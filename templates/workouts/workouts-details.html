@@ -13,8 +13,8 @@
 
     <div class="actions">
 
-        <a href="{% url 'edit-workout' workout.id %}" class="btn">Edit Workout</a>
-        <a class="btn" href="{% url 'delete-workout' workout.pk %}">Delete</a>
+        <a href="{% url 'workout-edit' workout.id %}" class="btn">Edit Workout</a>
+        <a class="btn" href="{% url 'workout-delete' workout.pk %}">Delete</a>
         <a href="{% url 'workouts-home' %}" class="btn">Back to Workouts</a>
         
     </div>

@@ -1,17 +1,26 @@
 {% extends 'common/base.html' %}
+{% load custom_filters %}
 
 {% block content %}
     
-    <a class='button' href="{% url 'create-post'%}">Create a post</a>
+    <a class='button' href="{% url 'post-create' %}">Create a post</a>
     
     
     {% for post in approved_posts %}
     
-        <p><a href={% url 'post-details' post.pk %}>by: {{ post.user.username }}</a></p>
+        <p>
+            <a href={% url 'post-details' post.pk %}>by: {{ post.user.username }}</a>
+            {% if post.has_been_edited %}
+            (Edited)
+            {% endif %}
+        </p> 
+        
         <p>message:{{ post.content }}</p>
         {% if post.image %}
         <img src="{{ post.image.url }}" alt="pic">
         {% endif %}
+        <p>Comments: {{ comments|get_comments_count:post }}</p>
+        <p>Added on: {{ post.created_at|date:"H:i d.m.Y" }}</p>
         
     {% endfor %}
     

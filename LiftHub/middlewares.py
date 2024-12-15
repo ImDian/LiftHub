@@ -8,8 +8,10 @@ class ProfileCompletionMiddleware:
 
     def __call__(self, request):
         if request.user.is_authenticated:
-            if hasattr(request.user, 'profile') and not request.user.profile.is_completed:
-                setup_url = reverse('edit-profile', kwargs={'slug': request.user.profile.slug})
+            if (hasattr(request.user, 'profile') and not request.user.profile.is_completed
+                    and not request.user.is_superuser):
+
+                setup_url = reverse('profile-edit', kwargs={'slug': request.user.profile.slug})
                 logout_url = reverse('logout')
                 if request.path != setup_url and request.path != logout_url:
                     return redirect(setup_url)

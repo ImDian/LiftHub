@@ -3,7 +3,7 @@
 {% block content %}
     <title>Delete Confirmation</title>
 
-    <form action="{% url 'delete-meal' meal.pk %}" method="post">
+    <form action="{% url 'meal-delete' meal.pk %}" method="post">
         {{ form.as_p }}
         {% csrf_token %}
         <button class="button-9">Confirm</button>

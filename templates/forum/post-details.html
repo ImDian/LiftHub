@@ -10,27 +10,33 @@
 
         {% if post.image %}
 
-        {{ post.image }}
+            <img src="{{ post.image.url }}" alt="pic">
 
         {% endif %}
 
     </div>
-
+ </body>
     <div class="comments">
         <h3>Comments:</h3>
         {% for comment in comments %}
             <p>by: {{ comment.user.username }}</p>
             <p>message: {{ comment.content }}</p>
         {% endfor %}
-
-    <form action="" method="post">
-        {% csrf_token %}
-        <label for="text-input">Enter your comment:</label>
-        <input type="text" id="text-input" name="text-input" placeholder="Type something here">
-        <button type="submit">Submit</button>
-    </form>
-
     </div>
-</body>
+
+    <div class="add-comment">
+        <h3>Add a Comment:</h3>
+        <form method="post" action="">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Submit</button>
+        </form>
+    
+        {% if is_editable %}
+            <a href={% url 'post-edit' post.pk %}>Edit</a>
+            <a href={% url 'post-delete' post.pk %}>Delete</a>
+        {% endif %}
+    </div>
+    
 
 {% endblock %}

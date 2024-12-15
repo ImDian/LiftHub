@@ -20,8 +20,8 @@
             <a href="{% url 'post-history' profile.slug %}" class="btn">Posts</a>
             {% if user.pk == profile.user.pk %}
                 <a href="{% url 'meal-history' profile.slug %}" class="btn">History</a>
-                <a href="{% url 'edit-profile' profile.slug %}" class="btn">Edit Profile</a>
-                <a href="{% url 'delete-profile' profile.slug %}" class="btn delete-btn">Delete Profile</a>
+                <a href="{% url 'profile-edit' profile.slug %}" class="btn">Edit Profile</a>
+                <a href="{% url 'profile-delete' profile.slug %}" class="btn delete-btn">Delete Profile</a>
             {% endif %}
         </div>
     </div>

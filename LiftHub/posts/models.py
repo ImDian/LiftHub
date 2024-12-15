@@ -23,7 +23,11 @@ class Post(models.Model):
         auto_now_add=True,
     )
 
-    approved = models.BooleanField(
+    is_approved = models.BooleanField(
+        default=False,
+    )
+
+    has_been_edited = models.BooleanField(
         default=False,
     )
 

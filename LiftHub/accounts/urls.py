@@ -10,10 +10,10 @@ urlpatterns = [
     path('logout/', LogoutView.as_view(), name='logout'),
     path('profiles/<slug:slug>/', include([
         path('', ProfileView.as_view(), name='profile'),
-        path('edit/', ProfileEditView.as_view(), name='edit-profile'),
+        path('edit/', ProfileEditView.as_view(), name='profile-edit'),
         path('history/', MealHistoryView.as_view(), name='meal-history'),
         path('posts/', PostHistoryView.as_view(), name='post-history'),
-        path('delete/', ProfileDeleteView.as_view(), name='delete-profile'),
+        path('delete/', ProfileDeleteView.as_view(), name='profile-delete'),
     ]))
 ]
 

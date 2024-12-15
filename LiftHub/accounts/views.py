@@ -95,7 +95,7 @@ class MealHistoryView(LoginRequiredMixin, UserPassesTestMixin, ListView):
         return MealHistory.objects.filter(user=user)
 
 
-class PostHistoryView(LoginRequiredMixin, UserPassesTestMixin, ListView):
+class PostHistoryView(LoginRequiredMixin, ListView):
     model = Post
     template_name = 'history/post-history.html'
     context_object_name = 'post_history'
@@ -103,10 +103,6 @@ class PostHistoryView(LoginRequiredMixin, UserPassesTestMixin, ListView):
     def get_user_from_slug(self):  # helper method
         slug = self.kwargs.get('slug')
         return get_object_or_404(UserModel, username=slug)
-
-    def test_func(self):
-        user = self.get_user_from_slug()
-        return self.request.user == user
 
     def get_queryset(self):
         user = self.get_user_from_slug()
