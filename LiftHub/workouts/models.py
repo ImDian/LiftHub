@@ -6,6 +6,11 @@ UserModel = get_user_model()
 
 
 class Workout(models.Model):
+    class Meta:
+        permissions = [
+            ("edit_base_workouts", "Can edit base workouts"),
+        ]
+
     name = models.CharField(
         max_length=30,
         null=False,

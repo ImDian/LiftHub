@@ -8,13 +8,14 @@
     <div class="details">
         <p><span class="field-label">Name:</span> {{ workout.name }}</p>
         <p><span class="field-label">Description:</span> {{ workout.description }}</p>
-        <p><span class="field-label">Calories:</span> {{ workout.calories }}</p>
+        <p><span class="field-label">Calories:</span> {{ workout.calories_burned }}</p>
     </div>
 
     <div class="actions">
-
+        {% if not workout.is_base or workout.is_base and perms.workouts.edit_base_workouts %}
         <a href="{% url 'workout-edit' workout.id %}" class="btn">Edit Workout</a>
         <a class="btn" href="{% url 'workout-delete' workout.pk %}">Delete</a>
+        {% endif %}
         <a href="{% url 'workouts-home' %}" class="btn">Back to Workouts</a>
         
     </div>

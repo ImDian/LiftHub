@@ -85,14 +85,15 @@ WSGI_APPLICATION = 'LiftHub.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+# noinspection PyInterpreter
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": "postgres",
+        "NAME": "lifthubx",
         "USER": "postgres",
         "PASSWORD": "dido2486",
         "HOST": "127.0.0.1",
-        "PORT": "5433",
+        "PORT": "5432",
     }
 }
 

@@ -9,6 +9,11 @@ UserModel = get_user_model()
 
 
 class Meal(models.Model):
+    class Meta:
+        permissions = [
+            ("edit_base_meals", "Can edit base meals"),
+        ]
+
     name = models.CharField(
         max_length=30,
         null=False,

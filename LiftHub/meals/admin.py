@@ -1,6 +1,11 @@
 from django.contrib import admin
-from django.contrib.auth import get_user_model
-from django.contrib.auth.admin import UserAdmin
-from django.contrib.auth.forms import UserCreationForm, UserChangeForm
+from LiftHub.meals.models import Meal
 
-# Register your models here.
+
+class MealsAdmin(admin.ModelAdmin):
+    def has_change_permission(self, request, obj=None):
+        if obj and obj.is_base and not request.user.has_perm('app.edit_base_meals'):
+            return False
+        return super().has_change_permission(request, obj)
+
+admin.site.register(Meal, MealsAdmin)

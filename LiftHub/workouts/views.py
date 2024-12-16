@@ -3,6 +3,7 @@ from django.shortcuts import get_object_or_404
 from django.urls import reverse_lazy
 from django.views.generic import ListView, CreateView, TemplateView, DetailView, UpdateView, DeleteView
 from LiftHub.workouts.forms import WorkoutCreateForm, WorkoutEditForm, WorkoutDeleteForm
+from LiftHub.workouts.mixins import WorkoutPermissionMixin
 from LiftHub.workouts.models import Workout
 
 
@@ -11,6 +12,11 @@ class CreateWorkoutView(LoginRequiredMixin, CreateView):
     form_class = WorkoutCreateForm
     template_name = 'workouts/create-workout.html'
     success_url = reverse_lazy('workouts-home')
+
+    def get_form_kwargs(self):
+        kwargs = super().get_form_kwargs()
+        kwargs['request'] = self.request
+        return kwargs
 
     def form_valid(self, form):
         workout = form.save(commit=False)
@@ -46,14 +52,11 @@ class WorkoutsDetailsPage(UserPassesTestMixin, DetailView):
         return self.request.user == workout.creator or workout.is_base
 
 
-class WorkoutsEditPage(UserPassesTestMixin, UpdateView):
+class WorkoutsEditPage(LoginRequiredMixin, WorkoutPermissionMixin, UpdateView):
     model = Workout
     template_name = 'workouts/edit-workout.html'
     form_class = WorkoutEditForm
 
-    def test_func(self):
-        workout = get_object_or_404(Workout, pk=self.kwargs['pk'])
-        return self.request.user == workout.creator
 
     def get_success_url(self):
         return reverse_lazy(
@@ -63,16 +66,11 @@ class WorkoutsEditPage(UserPassesTestMixin, UpdateView):
             })
 
 
-class WorkoutsDeletePage(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
-
+class WorkoutsDeletePage(LoginRequiredMixin, WorkoutPermissionMixin, DeleteView):
     model = Workout
     template_name = 'workouts/delete-workout.html'
     form_class = WorkoutDeleteForm
     success_url = reverse_lazy('workouts-home')
-
-    def test_func(self):
-        workout = get_object_or_404(Workout, pk=self.kwargs['pk'])
-        return self.request.user == workout.creator
 
     def get_initial(self):
         pk = self.kwargs.get(self.pk_url_kwarg)

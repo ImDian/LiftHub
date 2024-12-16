@@ -1,9 +1,9 @@
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import get_object_or_404
 from django.urls import reverse_lazy
 from django.views.generic import ListView, CreateView, DetailView, UpdateView, DeleteView
-
 from LiftHub.meals.forms import MealCreateForm, MealEditForm, MealDeleteForm
+from LiftHub.meals.mixins import MealPermissionMixin
 from LiftHub.meals.models import Meal
 
 
@@ -12,6 +12,11 @@ class CreateMealView(LoginRequiredMixin, CreateView):
     form_class = MealCreateForm
     template_name = 'meals/create-meal.html'
     success_url = reverse_lazy('meals-home')
+
+    def get_form_kwargs(self):
+        kwargs = super().get_form_kwargs()
+        kwargs['request'] = self.request
+        return kwargs
 
     def form_valid(self, form):
         meal = form.save(commit=False)
@@ -47,32 +52,24 @@ class MealsDetailsPage(UserPassesTestMixin, DetailView):
         return self.request.user == meal.creator or meal.is_base
 
 
-class MealsEditPage(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+class MealsEditPage(LoginRequiredMixin, MealPermissionMixin, UpdateView):
     model = Meal
     template_name = 'meals/edit-meal.html'
     form_class = MealEditForm
 
-    def test_func(self):
-        meal = get_object_or_404(Meal, pk=self.kwargs['pk'])
-        return self.request.user == meal.creator
 
     def get_success_url(self):
         return reverse_lazy(
             'meal-details',
-            kwargs={
-                'pk': self.kwargs['pk'],
-            })
+            kwargs={'pk': self.kwargs['pk']}
+        )
 
 
-class MealsDeletePage(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+class MealsDeletePage(LoginRequiredMixin, MealPermissionMixin, DeleteView):
     model = Meal
     template_name = 'meals/delete-meal.html'
     form_class = MealDeleteForm
     success_url = reverse_lazy('meals-home')
-
-    def test_func(self):
-        meal = get_object_or_404(Meal, pk=self.kwargs['pk'])
-        return self.request.user == meal.creator
 
     def get_initial(self):
         pk = self.kwargs.get(self.pk_url_kwarg)

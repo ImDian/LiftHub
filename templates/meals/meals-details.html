@@ -86,9 +86,10 @@
     </div>
 
     <div class="actions">
-
+        {% if not meal.is_base or meal.is_base and perms.meals.edit_base_meals %}
         <a href="{% url 'meal-edit' meal.id %}" class="btn">Edit Meal</a>
         <a class="btn" href="{% url 'meal-delete' meal.pk %}">Delete</a>
+        {% endif %}
         <a href="{% url 'meals-home' %}" class="btn">Back to Meals</a>
         
     </div>

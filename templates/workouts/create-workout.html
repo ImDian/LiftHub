@@ -3,49 +3,12 @@
 {% block content %}
 
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Workout Form</title>
-    
-</head>
-<body>
-    <div class="form">
-        <h1>{{ form_title }}</h1>
         <form method="post">
             {% csrf_token %}
-            <div>
-                <label for="id_name">Workout Name:</label>
-                {{ form.name }}
-                {% if form.name.errors %}
-                    <div class="text-danger">
-                        {{ form.name.errors }}
-                    </div>
-                {% endif %}
-            </div>
-            <div>
-                <label for="id_description">Description:</label>
-                {{ form.description }}
-                {% if form.description.errors %}
-                    <div class="text-danger">
-                        {{ form.description.errors }}
-                    </div>
-                {% endif %}
-            </div>
-            <div>
-                <label for="id_calories_burned">Calories Burned:</label>
-                {{ form.calories_burned }}
-                {% if form.calories_burned.errors %}
-                    <div class="text-danger">
-                        {{ form.calories_burned.errors }}
-                    </div>
-                {% endif %}
-            </div>
+            {{ form.as_p }}
             <button type="submit">Save Workout</button>
         </form>
         <a href="{% url 'workouts-home' %}" class="back-link">Back to Workouts</a>
-    </div>
-</body>
 
 
 {% endblock %}
