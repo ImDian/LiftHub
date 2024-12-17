@@ -1,12 +1,14 @@
 {% extends 'common/base.html' %}
 
 {% block content %}
-    <title>Delete Confirmation</title>
+    <h1>Do you want to delete your Workout?</h1>
+            
+            <form id='delete' class="register-form" method="post" action="">
+                {% csrf_token %}
 
-    <form action="{% url 'meal-delete' meal.pk %}" method="post">
-        {{ form.as_p }}
-        {% csrf_token %}
-        <button class="button-9">Confirm</button>
-        <a class="btn" href="{% url 'meal-details' meal.pk %}">Cancel</a>
-    </form>
+                <button type="submit">Yes</button>
+                <a href="{% url 'meal-details' meal.pk %}">No</a>
+
+            </form>
+    
 {% endblock %}

@@ -15,28 +15,34 @@
         {% endif %}
 
     </div>
- </body>
-    <div class="comments">
-        <h3>Comments:</h3>
-        {% for comment in comments %}
-            <p>by: {{ comment.user.username }}</p>
-            <p>message: {{ comment.content }}</p>
-        {% endfor %}
-    </div>
+    </body>
 
-    <div class="add-comment">
+    {% if post.is_approved %}
+        <div class="comments">
+            <h3>Comments:</h3>
+            {% for comment in comments %}
+                <p>by: {{ comment.user.username }}</p>
+                <p>message: {{ comment.content }}</p>
+            {% endfor %}
+        </div>
+
+        <div class="add-comment">
         <h3>Add a Comment:</h3>
         <form method="post" action="">
             {% csrf_token %}
             {{ form.as_p }}
             <button type="submit">Submit</button>
         </form>
+    {% endif %}
     
-        {% if is_editable %}
-            <a href={% url 'post-edit' post.pk %}>Edit</a>
-            <a href={% url 'post-delete' post.pk %}>Delete</a>
-        {% endif %}
-    </div>
-    
+{% if has_permission %}
+    <a href={% url 'post-edit' post.pk %}>Edit</a>
+    <a href={% url 'post-delete' post.pk %}>Delete</a>
+{% endif %}
+{% if perms.posts.approve_posts and not post.is_approved %}
+    <a href="">Approve</a>
+{% endif %}    
+</div>
+
 
 {% endblock %}

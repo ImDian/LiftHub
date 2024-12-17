@@ -72,7 +72,7 @@ class ProfileDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
         return self.request.user == user
 
     def form_valid(self, form):
-        user = self.get_user_from_slug()
+        user = self.object
         user.delete()
         return super().form_valid(form)
 
@@ -92,7 +92,7 @@ class MealHistoryView(LoginRequiredMixin, UserPassesTestMixin, ListView):
 
     def get_queryset(self):
         user = self.get_user_from_slug()
-        return MealHistory.objects.filter(user=user)
+        return MealHistory.objects.filter(user=user).order_by('-day')
 
 
 class PostHistoryView(LoginRequiredMixin, ListView):

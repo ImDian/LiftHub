@@ -8,6 +8,12 @@ UserModel = get_user_model()
 
 
 class Post(models.Model):
+    class Meta:
+        permissions = [
+            ("approve_posts", "Can approve posts"),
+            ("delete_posts", "Can delete user posts")
+        ]
+
     user = models.ForeignKey(
         to=UserModel,
         on_delete=models.CASCADE,
@@ -36,6 +42,9 @@ class Post(models.Model):
         blank=True,
         null=True,
     )
+
+    def __str__(self):
+        return f"{self.user.username} - {self.created_at}"
 
 
 class Comment(models.Model):

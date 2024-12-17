@@ -32,7 +32,3 @@ class WorkoutCreateForm(WorkoutBaseForm):
 
 class WorkoutEditForm(WorkoutBaseForm):
     pass
-
-
-class WorkoutDeleteForm(WorkoutBaseForm):
-    pass

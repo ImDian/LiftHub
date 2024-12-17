@@ -5,7 +5,7 @@
     {% for data in meal_history %}
         
         <p>
-            {{ data.result }}
+            {{ data.day|date:"d.m.Y" }} - {{ data.result }}
         </p>
         
     {% endfor %}

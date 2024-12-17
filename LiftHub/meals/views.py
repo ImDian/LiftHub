@@ -2,7 +2,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.shortcuts import get_object_or_404
 from django.urls import reverse_lazy
 from django.views.generic import ListView, CreateView, DetailView, UpdateView, DeleteView
-from LiftHub.meals.forms import MealCreateForm, MealEditForm, MealDeleteForm
+from LiftHub.meals.forms import MealCreateForm, MealEditForm
 from LiftHub.meals.mixins import MealPermissionMixin
 from LiftHub.meals.models import Meal
 
@@ -68,12 +68,4 @@ class MealsEditPage(LoginRequiredMixin, MealPermissionMixin, UpdateView):
 class MealsDeletePage(LoginRequiredMixin, MealPermissionMixin, DeleteView):
     model = Meal
     template_name = 'meals/delete-meal.html'
-    form_class = MealDeleteForm
     success_url = reverse_lazy('meals-home')
-
-    def get_initial(self):
-        pk = self.kwargs.get(self.pk_url_kwarg)
-        meal = Meal.objects.get(pk=pk)
-        return meal.__dict__
-
-

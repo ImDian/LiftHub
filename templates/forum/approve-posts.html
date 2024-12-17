@@ -1,0 +1,11 @@
+{% extends 'common/base.html' %}
+
+{% block content %}
+
+    {% for post in unapproved_posts %}
+        <p>
+        <a href="{% url 'post-details' post.pk %}">{{ post.user.username }}</a>
+        </p>
+    {% endfor %}
+    
+{% endblock %}

@@ -1,22 +1,24 @@
-from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
-from django.shortcuts import get_object_or_404, redirect
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.core.exceptions import PermissionDenied
+from django.shortcuts import get_object_or_404
 from django.urls import reverse_lazy, reverse
 from django.views.generic import ListView, DetailView, UpdateView, CreateView, DeleteView
 from django.views.generic.edit import FormMixin
 from LiftHub.posts.forms import PostCreateForm, PostEditForm, CommentCreateForm
+from LiftHub.posts.mixins import PostPermissionMixin
 from LiftHub.posts.models import Post, Comment
 
 
 class ForumHomeView(LoginRequiredMixin, ListView):
     model = Post
-    context_object_name = 'all_posts'
+    context_object_name = 'approved_posts'
     template_name = 'forum/forum-home.html'
-    queryset = Post.objects.all().order_by('-created_at')
+    queryset = Post.objects.filter(is_approved=True).order_by('-created_at')
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['approved_posts'] = Post.objects.filter(is_approved=True).order_by('-created_at')
         context['comments'] = Comment.objects.all()
+        context['awaiting_count'] = Post.objects.filter(is_approved=False).count()
         return context
 
 
@@ -43,7 +45,10 @@ class PostDetailView(FormMixin, LoginRequiredMixin, DetailView):
         context = super().get_context_data(**kwargs)
         context['comments'] = Comment.objects.filter(post=self.object)
         context['form'] = self.get_form()
-        context['is_editable'] = self.request.user == self.get_object().user
+        context['has_permission'] = (
+                self.request.user == self.get_object().user or
+                self.request.user.has_perm('posts.delete_posts')
+        )
         return context
 
     def post(self, request, *args, **kwargs):
@@ -65,14 +70,10 @@ class PostDetailView(FormMixin, LoginRequiredMixin, DetailView):
         return reverse('post-details', kwargs={'pk': self.object.pk})
 
 
-class PostEditView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+class PostEditView(LoginRequiredMixin, PostPermissionMixin, UpdateView):
     model = Post
     form_class = PostEditForm
     template_name = 'forum/edit-post.html'
-
-    def test_func(self):
-        post = get_object_or_404(Post, pk=self.kwargs['pk'])
-        return self.request.user == post.user
 
     def form_valid(self, form):
         response = super().form_valid(form)
@@ -91,32 +92,19 @@ class PostEditView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
         )
 
 
-class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+class PostDeleteView(LoginRequiredMixin, PostPermissionMixin, DeleteView):
     model = Post
     template_name = 'forum/delete-post.html'
     success_url = reverse_lazy('forum-home')
 
-    def test_func(self):
-        post = get_object_or_404(Post, pk=self.kwargs['pk'])
-        return self.request.user == post.user
 
+class PostApproveView(LoginRequiredMixin, ListView):
+    model = Post
+    template_name = 'forum/approve-posts.html'
+    queryset = Post.objects.filter(is_approved=False)
+    context_object_name = 'unapproved_posts'
 
-class CommentCreateView(LoginRequiredMixin, CreateView):
-    model = Comment
-    form_class = CommentCreateForm
-    template_name = 'forum/create-comment.html'
-
-    def form_valid(self, form):
-        comment = form.save(commit=False)
-        comment.creator = self.request.user
-
-        return super().form_valid(form)
-
-    def get_success_url(self):
-        return reverse_lazy(
-            'post-details',
-            kwargs={
-                'username': self.kwargs['username'],
-                'pk': self.kwargs['pk'],
-            }
-        )
+    def dispatch(self, request, *args, **kwargs):
+        if not self.request.user.has_perm('posts.approve_posts'):
+            raise PermissionDenied("You do not have permission to view this page.")
+        return super().dispatch(request, *args, **kwargs)

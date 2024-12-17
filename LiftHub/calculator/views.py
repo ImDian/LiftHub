@@ -1,6 +1,6 @@
+from datetime import date
 from django.urls import reverse_lazy
 from django.views.generic import FormView
-
 from LiftHub.accounts.models import Profile
 from LiftHub.accounts.models.history import MealHistory
 from LiftHub.calculator.forms import CalculatorForm
@@ -68,6 +68,10 @@ class CalculatorHomePage(FormView):
             result = str(self.request.POST.get('result', ''))
 
             if self.request.user.is_authenticated:
+                current_history = MealHistory.objects.filter(user=self.request.user)
+                if current_history.get(day=date.today()):
+                    current_history.get(day=date.today()).delete()          # replaces existing history for the day
+
                 MealHistory.objects.create(
                     user=self.request.user,
                     total_calories=total_calories,
