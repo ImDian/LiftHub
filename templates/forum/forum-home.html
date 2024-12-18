@@ -1,33 +1,20 @@
 {% extends 'common/base.html' %}
-{% load custom_filters %}
 
 {% block content %}
+    <div class="forum-buttons-container">
     
-    <a class='button' href="{% url 'post-create' %}">Create a post</a>
-    
+    <a class='btn' href="{% url 'post-create' %}">Create a post</a>
     {% if perms.posts.approve_posts %}
-    <p>
-    <a class='button' href="{% url 'post-approve' %}">Awaiting approval ({{ awaiting_count }})</a>
-    </p>
+            <a class='btn' href="{% url 'post-approve' %}">Awaiting approval ({{ awaiting_count }})</a>
     {% endif %}
     
-    {% for post in approved_posts %}
+    </div>
     
-        <p>
-            <a href={% url 'post-details' post.pk %}>by: {{ post.user.username }}</a>
-            {% if post.has_been_edited %}
-            (Edited)
-            {% endif %}
-        </p> 
-        
-        <p>message:{{ post.content }}</p>
-        {% if post.image %}
-        <img src="{{ post.image.url }}" alt="pic">
-        {% endif %}
-        <p>Comments: {{ comments|get_comments_count:post }}</p>
-        <p>Added on: {{ post.created_at|date:"H:i, d.m.Y" }}</p>
+    {% for post in approved_posts %}
+
+        {% include 'forum/post-card.html' %}
         
     {% endfor %}
-    
-    
+
+
 {% endblock %}

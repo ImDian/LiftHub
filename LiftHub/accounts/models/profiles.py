@@ -106,6 +106,9 @@ class Profile(models.Model):
 
             self.bmr = int(bmr)
 
+    def get_full_name(self):
+        return f"{self.first_name} {self.last_name}"
+
     def save(self, *args, **kwargs):
         self.slug = self.user.username
         self.get_basic_metabolic_rate()

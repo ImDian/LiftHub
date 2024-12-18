@@ -57,7 +57,6 @@ class MealsEditPage(LoginRequiredMixin, MealPermissionMixin, UpdateView):
     template_name = 'meals/edit-meal.html'
     form_class = MealEditForm
 
-
     def get_success_url(self):
         return reverse_lazy(
             'meal-details',

@@ -62,6 +62,7 @@ class ProfileDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     model = Profile
     template_name = 'profiles/profile-delete.html'
     success_url = reverse_lazy('home-page')
+    context_object_name = 'profile'
 
     def get_user_from_slug(self):  # helper method
         slug = self.kwargs.get('slug')

@@ -1,6 +1,7 @@
+from django.contrib.auth.decorators import permission_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.core.exceptions import PermissionDenied
-from django.shortcuts import get_object_or_404
+from django.shortcuts import get_object_or_404, redirect
 from django.urls import reverse_lazy, reverse
 from django.views.generic import ListView, DetailView, UpdateView, CreateView, DeleteView
 from django.views.generic.edit import FormMixin
@@ -43,7 +44,7 @@ class PostDetailView(FormMixin, LoginRequiredMixin, DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['comments'] = Comment.objects.filter(post=self.object)
+        context['comments'] = Comment.objects.filter(post=self.object).order_by('-created_at')
         context['form'] = self.get_form()
         context['has_permission'] = (
                 self.request.user == self.get_object().user or
@@ -98,7 +99,7 @@ class PostDeleteView(LoginRequiredMixin, PostPermissionMixin, DeleteView):
     success_url = reverse_lazy('forum-home')
 
 
-class PostApproveView(LoginRequiredMixin, ListView):
+class PostApproveListView(LoginRequiredMixin, ListView):
     model = Post
     template_name = 'forum/approve-posts.html'
     queryset = Post.objects.filter(is_approved=False)
@@ -108,3 +109,12 @@ class PostApproveView(LoginRequiredMixin, ListView):
         if not self.request.user.has_perm('posts.approve_posts'):
             raise PermissionDenied("You do not have permission to view this page.")
         return super().dispatch(request, *args, **kwargs)
+
+
+@permission_required('posts.approve_posts', raise_exception=True)
+def approve_post(request, pk):
+    post = Post.objects.get(pk=pk)
+    post.is_approved = True
+    post.save()
+
+    return redirect(request.META.get('HTTP_REFERER'))

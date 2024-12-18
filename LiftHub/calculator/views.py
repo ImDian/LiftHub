@@ -68,9 +68,9 @@ class CalculatorHomePage(FormView):
             result = str(self.request.POST.get('result', ''))
 
             if self.request.user.is_authenticated:
-                current_history = MealHistory.objects.filter(user=self.request.user)
-                if current_history.get(day=date.today()):
-                    current_history.get(day=date.today()).delete()          # replaces existing history for the day
+                current_day_history = MealHistory.objects.filter(user=self.request.user, day=date.today()).first()
+                if current_day_history:
+                    current_day_history.delete()          # replaces existing history for the day
 
                 MealHistory.objects.create(
                     user=self.request.user,

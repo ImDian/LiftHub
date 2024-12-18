@@ -1,0 +1,114 @@
+.forum-buttons-container {
+    display: flex; /* Use flexbox for layout */
+    justify-content: center; /* Center the buttons horizontally */
+    gap: 1rem; /* Add spacing between the buttons */
+    margin-top: 2rem; /* Optional: Add some vertical spacing from the top */
+    margin-bottom: 1rem;
+}
+
+.postcard-card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 600px; /* Set fixed width to 600px */
+  padding: 1.5rem;
+  box-sizing: border-box; /* Ensures padding is included in width */
+  margin: 0 auto; /* Centers the card horizontally */
+}
+
+/* Postcard Container */
+.postcard-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 1rem;
+}
+
+/* Postcard Header */
+.postcard-header {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.postcard-profile {
+  display: flex;
+  align-items: center;
+}
+
+.postcard-avatar {
+  height: 2.5rem; /* Larger avatar */
+  width: 2.5rem;
+  border-radius: 50%;
+  background-color: #cbd5e1;
+  background-image: url('https://i.pravatar.cc/32');
+  background-size: cover;
+}
+
+.postcard-name {
+  font-size: 1.125rem;
+  font-weight: 600; /* Poppins font weight for bold */
+  color: #334155;
+  margin-left: 0.75rem;
+}
+
+.postcard-name a {
+  text-decoration: none; /* Removes the underline */
+  color: inherit; /* Matches the text color of surrounding elements */
+  font-weight: bold; /* Optional: Add emphasis to the link */
+}
+
+.postcard-name a:hover {
+  text-decoration: underline; /* Add an underline on hover, if desired */
+  color: #4b5563; /* Optional: Darken the text color on hover */
+}
+
+.postcard-time {
+  font-size: 0.875rem;
+  color: #6b7280;
+  font-weight: 400; /* Regular weight for time text */
+  margin-top: 0.5rem;
+}
+
+/* Postcard Content */
+.postcard-content {
+  margin: 1.25rem 0;
+}
+
+.postcard-content p {
+  font-size: 1rem;
+  color: #6b7280;
+  font-weight: 400;
+  line-height: 1.5;
+  word-wrap: break-word; /* Ensures long text doesn't overflow */
+}
+
+/* Postcard Footer */
+.postcard-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.postcard-comments {
+  display: flex;
+  align-items: center;
+  color: #6b7280;
+  cursor: pointer;
+  transition: color 0.3s;
+  font-weight: 400; /* Regular weight for footer */
+}
+
+.postcard-comments:hover {
+  color: #374151;
+}
+
+.postcard-icon {
+  height: 1.25rem;
+  width: 1.25rem;
+  margin-right: 0.5rem;
+}
