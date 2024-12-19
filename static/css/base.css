@@ -1,8 +1,8 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    color: #40513B; /* Darkest color for text */
-    background-color: #EDF1D6; /* Brightest color for background */
+    color: #40513B;
+    background-color: #EDF1D6;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -15,7 +15,26 @@ main {
 footer {
     text-align: center;
     padding: 10px 0;
-    color: #9DC08B; /* Bright green text color for footer */
+    color: #9DC08B;
     font-size: 0.9em;
+    background-color: #EDF1D6;
+    margin-top: auto;
 }
 
+button {
+    width: 120px;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+    color: #EDF1D6;
+    font-size: 1em;
+    font-weight: bold;
+    background-color: #609966;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: center;
+}
+
+button:hover {
+    background-color: #40513B;
+}

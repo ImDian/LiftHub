@@ -100,7 +100,6 @@
   font-weight: 500;
 }
 
-/* Hover & Focus States */
 .form-input:hover {
   border-color: #cbd5e1;
 }
@@ -137,7 +136,6 @@
   color: var(--primary-dark);
 }
 
-/* Active States */
 .submit-button:active {
   transform: translateY(0);
   box-shadow: none;
@@ -147,7 +145,6 @@
   transform: scale(0.9);
 }
 
-/* Validation States */
 .form-input:not(:placeholder-shown):valid {
   border-color: var(--success);
 }
@@ -156,7 +153,6 @@
   color: var(--success);
 }
 
-/* Animation */
 @keyframes shake {
   0%,
   100% {

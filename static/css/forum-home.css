@@ -1,8 +1,8 @@
 .forum-buttons-container {
-    display: flex; /* Use flexbox for layout */
-    justify-content: center; /* Center the buttons horizontally */
-    gap: 1rem; /* Add spacing between the buttons */
-    margin-top: 2rem; /* Optional: Add some vertical spacing from the top */
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
     margin-bottom: 1rem;
 }
 
@@ -11,13 +11,13 @@
   border: 1px solid #e5e7eb;
   border-radius: 1rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  width: 600px; /* Set fixed width to 600px */
+  width: 600px;
   padding: 1.5rem;
-  box-sizing: border-box; /* Ensures padding is included in width */
-  margin: 0 auto; /* Centers the card horizontally */
+  box-sizing: border-box;
+  margin: 0 auto;
 }
 
-/* Postcard Container */
+
 .postcard-container {
   display: flex;
   justify-content: center;
@@ -26,7 +26,7 @@
   padding: 1rem;
 }
 
-/* Postcard Header */
+
 .postcard-header {
   display: flex;
   justify-content: space-between;
@@ -41,7 +41,7 @@
 }
 
 .postcard-avatar {
-  height: 2.5rem; /* Larger avatar */
+  height: 2.5rem;
   width: 2.5rem;
   border-radius: 50%;
   background-color: #cbd5e1;
@@ -51,30 +51,29 @@
 
 .postcard-name {
   font-size: 1.125rem;
-  font-weight: 600; /* Poppins font weight for bold */
+  font-weight: 600;
   color: #334155;
   margin-left: 0.75rem;
 }
 
 .postcard-name a {
-  text-decoration: none; /* Removes the underline */
-  color: inherit; /* Matches the text color of surrounding elements */
-  font-weight: bold; /* Optional: Add emphasis to the link */
+  text-decoration: none;
+  color: inherit;
+  font-weight: bold;
 }
 
 .postcard-name a:hover {
-  text-decoration: underline; /* Add an underline on hover, if desired */
-  color: #4b5563; /* Optional: Darken the text color on hover */
+  text-decoration: underline;
+  color: #4b5563;
 }
 
 .postcard-time {
   font-size: 0.875rem;
   color: #6b7280;
-  font-weight: 400; /* Regular weight for time text */
+  font-weight: 400;
   margin-top: 0.5rem;
 }
 
-/* Postcard Content */
 .postcard-content {
   margin: 1.25rem 0;
 }
@@ -84,10 +83,9 @@
   color: #6b7280;
   font-weight: 400;
   line-height: 1.5;
-  word-wrap: break-word; /* Ensures long text doesn't overflow */
+  word-wrap: break-word;
 }
 
-/* Postcard Footer */
 .postcard-footer {
   display: flex;
   justify-content: space-between;
@@ -100,7 +98,7 @@
   color: #6b7280;
   cursor: pointer;
   transition: color 0.3s;
-  font-weight: 400; /* Regular weight for footer */
+  font-weight: 400;
 }
 
 .postcard-comments:hover {

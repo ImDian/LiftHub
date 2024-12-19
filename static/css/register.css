@@ -1,42 +1,29 @@
-/* Center the form on the screen */
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    color: #40513B; /* Dark text color */
-    background-color: #EDF1D6; /* Bright background color */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; /* Ensures footer placement */
-    min-height: 100vh;
-}
-
-/* Wrapper to center form */
 .wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex: 1; /* Fills the remaining height for centering */
+    flex: 1;
 }
 
 .form {
     display: flex;
     flex-direction: column;
-    gap: 15px; /* Adjusted gap for better spacing */
+    gap: 15px;
     max-width: 400px;
-    width: 90%; /* Responsive width */
+    width: 90%;
     padding: 30px;
     border-radius: 15px;
-    background-color: #9DC08B; /* Medium green for form background */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    color: #40513B; /* Dark text */
-    border: 1px solid #609966; /* Darker green border */
+    background-color: #9DC08B;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    color: #40513B;
+    border: 1px solid #609966;
 }
 
 .title {
     font-size: 28px;
     font-weight: bold;
     text-align: center;
-    color: #40513B; /* Darker green for title */
+    color: #40513B;
 }
 
 .form label {
@@ -44,11 +31,11 @@ body {
 }
 
 .input {
-    background-color: #EDF1D6; /* Bright background for inputs */
-    color: #40513B; /* Dark text for contrast */
+    background-color: #EDF1D6;
+    color: #40513B;
     width: 100%;
     padding: 15px;
-    border: 1px solid #9DC08B; /* Green border */
+    border: 1px solid #9DC08B;
     border-radius: 10px;
     font-size: 1em;
     outline: none;
@@ -56,12 +43,12 @@ body {
 }
 
 .input:focus {
-    border-color: #609966; /* Darker green focus border */
+    border-color: #609966;
     box-shadow: 0 0 5px rgba(96, 153, 102, 0.5);
 }
 
 .form label span {
-    color: #40513B; /* Darker text for label */
+    color: #40513B;
     position: absolute;
     left: 15px;
     top: 15px;
@@ -70,7 +57,6 @@ body {
     transition: 0.3s ease;
 }
 
-/* Adjusted placeholder position for better spacing */
 .input:placeholder-shown + span {
     top: 22px;
     font-size: 0.9em;
@@ -78,7 +64,7 @@ body {
 
 .input:focus + span,
 .input:not(:placeholder-shown) + span {
-    color: #609966; /* Darker green for active label */
+    color: #609966;
     top: 5px;
     font-size: 0.8em;
     font-weight: bold;
@@ -88,40 +74,33 @@ body {
     border: none;
     padding: 10px 20px;
     border-radius: 10px;
-    color: #EDF1D6; /* Bright text for button */
+    color: #EDF1D6;
     font-size: 1em;
     font-weight: bold;
-    background-color: #609966; /* Dark green for button */
+    background-color: #609966;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
 .submit:hover {
-    background-color: #40513B; /* Darker green on hover */
+    background-color: #40513B;
 }
 
 .signin {
     text-align: center;
     font-size: 0.9em;
-    color: #40513B; /* Darker text */
+    color: #40513B;
 }
 
 .signin a {
-    color: #609966; /* Link color */
+    color: #609966;
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s ease;
 }
 
 .signin a:hover {
-    color: #40513B; /* Hover effect */
+    color: #40513B;
 }
 
-footer {
-    text-align: center;
-    padding: 10px 0;
-    color: #9DC08B; /* Bright green text color for footer */
-    font-size: 0.9em;
-    background-color: #EDF1D6; /* Ensure footer matches the body background */
-    margin-top: auto; /* Pushes footer to the bottom */
-}
+

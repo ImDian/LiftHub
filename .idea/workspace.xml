@@ -4,32 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="83ea767e-4f46-4fcf-aab4-77b2b72487bd" name="Changes" comment="fixed issue with registration">
-      <change afterPath="$PROJECT_DIR$/static/css/text-boxes.css" afterDir="false" />
+    <list default="true" id="83ea767e-4f46-4fcf-aab4-77b2b72487bd" name="Changes" comment="updated css">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LiftHub/accounts/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/LiftHub/accounts/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LiftHub/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/LiftHub/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LiftHub/posts/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/LiftHub/posts/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LiftHub/posts/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/LiftHub/posts/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LiftHub/posts/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/LiftHub/posts/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LiftHub/posts/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/LiftHub/posts/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/base.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/calculator.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/calculator.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/css/comment-card.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/comment-card.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/forum-home.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/forum-home.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/meals-and-workouts-home.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/meals-and-workouts-home.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/nav.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/nav.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/css/profile-home.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/profile-home.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/javascript/meal-and-workout-selection.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/forum/approve-posts.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/forum/approve-posts.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/forum/create-post.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/forum/create-post.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/forum/edit-post.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/forum/edit-post.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/forum/forum-home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/forum/forum-home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/forum/post-card.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/forum/post-card.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/forum/post-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/forum/post-details.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/history/meal-history.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/history/meal-history.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/history/post-history.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/history/post-history.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/profiles/profile-edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/profiles/profile-edit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/profiles/profiles-home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/profiles/profiles-home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/registration/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/registration/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/registration/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/registration/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/register.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/register.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -247,7 +232,7 @@
       <workItem from="1734346658316" duration="11872000" />
       <workItem from="1734425099197" duration="14546000" />
       <workItem from="1734458152868" duration="2052000" />
-      <workItem from="1734504661506" duration="49240000" />
+      <workItem from="1734504661506" duration="50408000" />
     </task>
     <task id="LOCAL-00001" summary="changed the UI and added workouts/meals functionalities">
       <option name="closed" value="true" />
@@ -329,7 +314,15 @@
       <option name="project" value="LOCAL" />
       <updated>1734603253340</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="updated css">
+      <option name="closed" value="true" />
+      <created>1734645605689</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1734645605690</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -355,7 +348,8 @@
     <MESSAGE value="added forum permissions, approve etc." />
     <MESSAGE value="added forum css, fixed some bugs" />
     <MESSAGE value="fixed issue with registration" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed issue with registration" />
+    <MESSAGE value="updated css" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated css" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/LiftHub$0007_delete_mealhistory.coverage" NAME="0007_delete_mealhistory Coverage Results" MODIFIED="1733340384520" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/LiftHub/meals/migrations" />
