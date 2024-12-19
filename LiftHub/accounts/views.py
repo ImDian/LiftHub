@@ -17,9 +17,11 @@ class RegisterView(CreateView):
     template_name = 'registration/register.html'
     success_url = reverse_lazy('home-page')
 
+
     def form_valid(self, form):
         response = super().form_valid(form)
-        login(self.request, self.object)
+        backend = 'django.contrib.auth.backends.ModelBackend'  # Adjust as needed
+        login(self.request, self.object, backend=backend)
         return response
 
 
