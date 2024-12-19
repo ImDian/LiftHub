@@ -44,6 +44,7 @@
 .meals-home .actions, .workouts-home .actions {
     margin-top: 20px;
     text-align: center;
+    background-color: #EDF1D6
 }
 
 .meals-home .actions .btn, .workouts-home .actions .btn {

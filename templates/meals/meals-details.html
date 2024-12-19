@@ -2,78 +2,6 @@
 
 {% block content %}
     
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meal Detail</title>
-    <style>
-        /* Namespace your CSS with a unique class */
-        .meal-detail {
-            font-family: Arial, sans-serif;
-            color: #40513B; /* Darkest color for text */
-            background-color: #EDF1D6; /* Brightest color for background */
-            padding: 20px;
-        }
-
-        .meal-detail h3 {
-            color: #609966;
-            border-bottom: 2px solid #9DC08B;
-            padding-bottom: 5px;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-
-        .meal-detail .details {
-            margin: 20px auto;
-            padding: 15px;
-            background-color: #9DC08B;
-            color: #EDF1D6;
-            border-radius: 10px;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-            max-width: 600px;
-            text-align: left;
-        }
-
-        .meal-detail .details p {
-            margin: 10px 0;
-        }
-
-        .meal-detail .details .field-label {
-            font-weight: bold;
-        }
-
-        .meal-detail .actions {
-            margin-top: 20px;
-            text-align: center;
-        }
-
-        .meal-detail .actions .btn {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #609966;
-            color: #EDF1D6;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-        }
-
-        .meal-detail .actions .btn:hover {
-            background-color: #40513B;
-        }
-
-        .meal-detail .actions .link {
-            color: #609966;
-            font-weight: bold;
-            text-decoration: underline;
-        }
-
-        .meal-detail .actions .link:hover {
-            color: #40513B;
-        }
-    </style>
-</head>
-
-<body class="meal-detail">
     <h3>Meal Details</h3>
 
     <div class="details">
@@ -93,6 +21,5 @@
         <a href="{% url 'meals-home' %}" class="btn">Back to Meals</a>
         
     </div>
-</body>
     
 {% endblock %}

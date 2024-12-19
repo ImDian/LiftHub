@@ -7,14 +7,7 @@
     <list default="true" id="83ea767e-4f46-4fcf-aab4-77b2b72487bd" name="Changes" comment="updated css">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/css/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/base.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/calculator.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/calculator.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/comment-card.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/comment-card.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/forum-home.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/forum-home.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/login.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/css/meals-and-workouts-home.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/meals-and-workouts-home.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/nav.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/nav.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/profile-home.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/profile-home.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/register.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/register.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -232,7 +225,7 @@
       <workItem from="1734346658316" duration="11872000" />
       <workItem from="1734425099197" duration="14546000" />
       <workItem from="1734458152868" duration="2052000" />
-      <workItem from="1734504661506" duration="50408000" />
+      <workItem from="1734504661506" duration="51360000" />
     </task>
     <task id="LOCAL-00001" summary="changed the UI and added workouts/meals functionalities">
       <option name="closed" value="true" />
@@ -322,7 +315,15 @@
       <option name="project" value="LOCAL" />
       <updated>1734645605690</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="updated css">
+      <option name="closed" value="true" />
+      <created>1734646795087</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1734646795087</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
