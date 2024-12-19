@@ -10,13 +10,28 @@ class PostBaseForm(forms.ModelForm):
 
 
 class PostCreateForm(PostBaseForm):
-    pass
+    class Meta:
+        model = Post
+        fields = ['content']
+        widgets = {
+            'content': forms.Textarea(attrs={
+                'rows': 5,
+                'placeholder': 'Write your post here...',
+                'class': 'custom-textarea',
+            }),
+        }
 
 
 class PostEditForm(PostBaseForm):
     class Meta:
         model = Post
         exclude = ['is_approved', 'user', 'image', 'has_been_edited']
+        widgets = {
+            'content': forms.Textarea(attrs={
+                'rows': 5,
+                'class': 'custom-textarea',
+            }),
+        }
 
 
 class CommentBaseForm(forms.ModelForm):
@@ -33,7 +48,7 @@ class CommentCreateForm(CommentBaseForm):
             'content': forms.Textarea(attrs={
                 'rows': 3,
                 'placeholder': 'Write your comment here...',
-                'style': 'resize: none;',
+                'class': 'custom-textarea',
             }),
         }
 

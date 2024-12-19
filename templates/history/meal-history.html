@@ -1,15 +1,22 @@
 {% extends 'common/base.html' %}
 
 {% block content %}
+    
+    <div class="post-details-buttons-container">
+        <a class="btn" href={% url 'profile' user.profile.slug %}>Back</a>
+    </div>
 
+    <div class="meal-history" style="margin-top: 3rem">
     {% for data in meal_history %}
         
         <p>
             {{ data.day|date:"d.m.Y" }} - {{ data.result }}
         </p>
-        
+    </div>
+    {% empty %}
+        <p style="text-align: center; margin-top: 3rem;">No meal history yet!</p>
     {% endfor %}
 
-    <a href={% url 'profile' user.profile.slug %}>Back</a>
+
 
 {% endblock %}

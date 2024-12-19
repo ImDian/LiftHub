@@ -12,8 +12,12 @@
                     </a>
                 </div>
             </div>
-            <div class="postcard-time">{{ post.created_at|timesince }} ago</div>
-            {#                    {{ post.created_at|date:"H:i, d.m.Y" }}#}
+            <div class="postcard-time" title="{{ post.created_at|date:"H:i, d.m.Y" }}">
+                 {% if post.has_been_edited %}
+                        (Edited) - 
+                    {% endif %}
+                {{ post.created_at|timesince }} ago
+            </div>
         </div>
         <div class="postcard-content">
             <p>{{ post.content }}</p>
@@ -23,7 +27,7 @@
                 <svg xmlns="http://www.w3.org/2000/svg" class="postcard-icon" viewBox="0 0 24 24" fill="none"
                      stroke="currentColor" stroke-width="2">
                     <path stroke-linecap="round" stroke-linejoin="round"
-                          d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"/>
+                          d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"></path>
                 </svg>
                 <span>{{ comments|get_comments_count:post }}</span>
             </a>

@@ -2,10 +2,40 @@
 
 {% block content %}
 
+    <div class="post-details-buttons-container">
+        <a class='btn' href="{% url 'forum-home' %}">Back</a>
+    </div>
+
     {% for post in unapproved_posts %}
-        <p>
-        <a href="{% url 'post-details' post.pk %}">{{ post.user.username }}</a>
-        </p>
+
+        <div class="postcard-container">
+            <div class="postcard-card">
+                <div class="postcard-header">
+                    <div class="postcard-profile">
+                        <div class="postcard-avatar"
+                             style="background-image: url('{{ post.user.profile.picture.url }}');"></div>
+                        <div class="postcard-name">
+                            <a href="{% url 'profile' post.user.profile.slug %}">
+                                {{ post.user.profile.get_full_name }}
+                            </a>
+                        </div>
+                    </div>
+                    <div class="postcard-time" title="{{ post.created_at|date:"H:i, d.m.Y" }}">
+                        {{ post.created_at|timesince }} ago
+                    </div>
+                </div>
+                <div class="postcard-content">
+                    <p>{{ post.content }}</p>
+                </div>
+                <div class="postcard-footer">
+                    <a class="btn" href="{% url 'post-approve' post.pk %}">Approve</a>
+                    <a class="delete-btn" href={% url 'post-delete' post.pk %}>Delete</a>
+                </div>
+            </div>
+        </div>
+
+    {% empty %}
+        <p style="text-align: center; margin-top: 3rem;">No posts waiting for approval!</p>
     {% endfor %}
-    
+
 {% endblock %}

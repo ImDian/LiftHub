@@ -2,18 +2,20 @@
 
 {% block content %}
     <div class="forum-buttons-container">
-    
-    <a class='btn' href="{% url 'post-create' %}">Create a post</a>
-    {% if perms.posts.approve_posts %}
-            <a class='btn' href="{% url 'post-approve' %}">Awaiting approval ({{ awaiting_count }})</a>
-    {% endif %}
-    
+
+        <a class='btn' href="{% url 'post-create' %}">Create a post</a>
+        {% if perms.posts.approve_posts %}
+            <a class='btn' href="{% url 'post-approval' %}">Awaiting approval ({{ awaiting_count }})</a>
+        {% endif %}
+
     </div>
-    
+
     {% for post in approved_posts %}
 
         {% include 'forum/post-card.html' %}
-        
+
+    {% empty %}
+        <p style="text-align: center; margin-top: 3rem;">No posts yet. Be the first to post!</p>
     {% endfor %}
 
 

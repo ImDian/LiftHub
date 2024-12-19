@@ -8,12 +8,18 @@
             <p><img src="{{ profile.picture.url }}" alt="profile-picture"> </p>
             <p><span class="field-label">First name:</span> {{ profile.first_name }}</p>
             <p><span class="field-label">Last name:</span> {{ profile.last_name }}</p>
-            <p><span class="field-label">Height:</span> {{ profile.height }}</p>
-            <p><span class="field-label">Weight:</span> {{ profile.weight }}</p>
+            <p><span class="field-label">Height:</span> {{ profile.height }} cm</p>
+            <p><span class="field-label">Weight:</span> {{ profile.weight }} kg</p>
             <p><span class="field-label">Sex:</span> {{ profile.sex }}</p>
-            <p><span class="field-label">Age:</span> {{ profile.age }}</p>
-            <p><span class="field-label">Body fat:</span> {{ profile.body_fat }}</p>
-            <p><span class="field-label">BMR:</span> {{ profile.bmr }}</p>
+            <p><span class="field-label">Age:</span> {{ profile.age }} years old</p>
+            <p><span class="field-label">Body fat:</span> 
+                {% if profile.body_fat %}
+                {{ profile.body_fat }} %
+                {% else %}
+                    N/A
+                {% endif %}
+            </p>
+            <p><span class="field-label">BMR:</span> {{ profile.bmr }} kcal</p>
         </div>
 
         <div class="actions">

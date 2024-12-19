@@ -37,11 +37,6 @@ class Post(models.Model):
         default=False,
     )
 
-    image = models.ImageField(
-        upload_to='post_images/',
-        blank=True,
-        null=True,
-    )
 
     def __str__(self):
         return f"{self.user.username} - {self.created_at}"

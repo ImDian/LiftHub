@@ -4,7 +4,7 @@ from LiftHub.posts import views
 
 urlpatterns = [
     path('', views.ForumHomeView.as_view(), name='forum-home'),
-    path('approve/', views.PostApproveListView.as_view(), name='post-approve'),
+    path('approve/', views.PostApproveListView.as_view(), name='post-approval'),
     path('post/', include([
         path('create/', views.PostCreateView.as_view(), name='post-create'),
         path('<pk>/', views.PostDetailView.as_view(), name='post-details'),

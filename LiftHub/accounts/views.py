@@ -7,7 +7,7 @@ from LiftHub.accounts.forms import ProfileEditForm
 from LiftHub.accounts.models import Profile
 from LiftHub.accounts.models.history import MealHistory
 from LiftHub.forms import CustomUserForm
-from LiftHub.posts.models import Post
+from LiftHub.posts.models import Post, Comment
 
 UserModel = get_user_model()
 
@@ -20,7 +20,7 @@ class RegisterView(CreateView):
 
     def form_valid(self, form):
         response = super().form_valid(form)
-        backend = 'django.contrib.auth.backends.ModelBackend'  # Adjust as needed
+        backend = 'django.contrib.auth.backends.ModelBackend'
         login(self.request, self.object, backend=backend)
         return response
 
@@ -75,7 +75,7 @@ class ProfileDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
         return self.request.user == user
 
     def form_valid(self, form):
-        user = self.object
+        user = self.object.user
         user.delete()
         return super().form_valid(form)
 
@@ -106,6 +106,12 @@ class PostHistoryView(LoginRequiredMixin, ListView):
     def get_user_from_slug(self):  # helper method
         slug = self.kwargs.get('slug')
         return get_object_or_404(UserModel, username=slug)
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['comments'] = Comment.objects.all()
+        context['inspected_user'] = self.get_user_from_slug()
+        return context
 
     def get_queryset(self):
         user = self.get_user_from_slug()

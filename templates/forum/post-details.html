@@ -3,14 +3,15 @@
 {% block content %}
 
     <div class="post-details-buttons-container">
-        {% if has_permission %}
-            <a class="btn" href={% url 'post-edit' post.pk %}>Edit</a>
-            <a class="btn" href={% url 'post-delete' post.pk %}>Delete</a>
-        {% endif %}
+        <a class="btn" href={% url 'forum-home' %}>Back</a>
         {% if perms.posts.approve_posts and not post.is_approved %}
             <a class="btn" href="{% url 'post-approve' post.pk %}">Approve</a>
         {% endif %}
-        <a class="btn" href={% url 'forum-home' %}>Back</a>
+        {% if has_permission %}
+            <a class="btn" href={% url 'post-edit' post.pk %}>Edit</a>
+            <a class="delete-btn" href={% url 'post-delete' post.pk %}>Delete</a>
+        {% endif %}
+
     </div>
 
     {% include 'forum/post-card.html' %}
@@ -22,7 +23,7 @@
                 {% csrf_token %}
                 <div class="comment-input-group">
                     {{ form.content }}
-                    <button class="btn" type="submit">Comment</button>
+                    <button class="btn" style="margin-bottom: 1rem" type="submit">Comment</button>
                 </div>
             </form>
         </div>
@@ -42,8 +43,9 @@
                                     </a>
                                 </div>
                             </div>
-                            <div class="comment-card-time">{{ comment.created_at|timesince }} ago</div>
-                            {#                    {{ post.created_at|date:"H:i, d.m.Y" }}#}
+                            <div class="postcard-time" title="{{ post.created_at|date:"H:i, d.m.Y" }}">
+                                {{ comment.created_at|timesince }} ago
+                            </div>
                         </div>
                         <div class="comment-card-content">
                             <p>{{ comment.content }}</p>
@@ -52,7 +54,7 @@
                 </div>
                 </div>
             {% empty %}
-                <p>No comments yet. Be the first to comment!</p>
+                <p style="text-align: center; margin-top: 3rem;">No comments yet. Be the first to comment!</p>
             {% endfor %}
 
     {% endif %}

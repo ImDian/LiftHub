@@ -1,14 +1,16 @@
 {% extends 'common/base.html' %}
 
 {% block content %}
-    <div class="form">
-	<form method="post" enctype="multipart/form-data">
-    
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Save</button>
-    </form>
+
+    <div class="form" style="margin-top: 3rem">
+        <form method="post" enctype="multipart/form-data">
+
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button class='btn' type="submit">Save</button>
+            <a href="{% url 'profile' profile.slug %}" class="btn">Cancel</a>
+        </form>
     </div>
-    <a href="{% url 'profile' profile.slug %}" class="btn">Cancel</a>
-    
+
+
 {% endblock %}

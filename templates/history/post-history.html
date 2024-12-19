@@ -2,17 +2,22 @@
 
 {% block content %}
 
-    <h3>{{ user.username }}'s posts:</h3>
-
+    <div class="post-details-buttons-container">
+    <a class='btn' href={% url 'profile' inspected_user.profile.slug %}>Back</a>
+    </div>
+    
     {% for post in post_history %}
 
+        {% include 'forum/post-card.html' %}
 
-        <p>
-            <a href={% url 'post-details' post.pk %}>{{ post.content }} - {{ post.created_at }}</a>
+    {% empty %}
+        <p style="text-align: center; margin-top: 3rem;">
+        {% if inspected_user == user %}
+            You haven't made any posts yet!
+        {% else %}
+            {{ inspected_user.username }} hasn't made any posts yet!
+        {% endif %}
         </p>
-
     {% endfor %}
-
-        <a href={% url 'profile' user.profile.slug %}>Back</a>
 
 {% endblock %}

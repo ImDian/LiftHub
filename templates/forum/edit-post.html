@@ -2,12 +2,15 @@
 
 {% block content %}
     
-    <form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Confirm</button>
-    </form>
-    
-    <a href="{% url 'post-details' post.pk %}" class="btn">Cancel</a>
+    <div class="add-comment">
+        <form method="post" action="" class="">
+            {% csrf_token %}
+            <div class="comment-input-group">
+                {{ form.content }}
+                <button class="btn" style="margin-bottom: 2rem" type="submit">Confirm</button>
+                <a class="btn" style="margin-bottom: 2rem" href={% url 'forum-home' %}>Cancel</a>
+            </div>
+        </form>
+    </div>
     
 {% endblock %}

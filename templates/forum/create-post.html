@@ -1,9 +1,18 @@
 {% extends 'common/base.html' %}
 
 {% block content %}
-    <form method="post" enctype="multipart/form-data">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button>Post</button>
-    </form>
+
+    <p style="text-align: center; margin-top: 4rem;">Note: The post needs to be approved before its made public!</p>
+
+    <div class="add-comment">
+        <form method="post" action="" class="">
+            {% csrf_token %}
+            <div class="comment-input-group">
+                {{ form.content }}
+                <button class="btn" style="margin-bottom: 2rem" type="submit">Post</button>
+                <a class="btn" style="margin-bottom: 2rem" href={% url 'forum-home' %}>Back</a>
+            </div>
+        </form>
+    </div>
+
 {% endblock %}

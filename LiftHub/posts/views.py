@@ -117,4 +117,4 @@ def approve_post(request, pk):
     post.is_approved = True
     post.save()
 
-    return redirect(request.META.get('HTTP_REFERER'))
+    return redirect('post-approval')
