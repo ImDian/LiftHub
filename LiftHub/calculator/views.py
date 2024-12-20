@@ -14,6 +14,7 @@ class CalculatorHomePage(FormView):
     def get_form_kwargs(self):
         kwargs = super().get_form_kwargs()
         kwargs['user'] = self.request.user
+        kwargs['action'] = self.request.POST.get('action', 'calculate')
         return kwargs
 
     def form_valid(self, form):
